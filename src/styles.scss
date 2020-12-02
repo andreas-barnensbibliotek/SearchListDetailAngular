@@ -1,1 +1,76 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Baloo|Hind+Siliguri|Questrial|Roboto');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cardo&display=swap');
+
+
+
+@import url(assets/css/bb-font.css); /* Barnens bibliotek eget font */
+@import url(assets/css/DANTOOINE.css);
+
+.dantooine-container{
+    background-color: #fff;
+}
+
+ng-autocomplete {
+    display: block;
+    width: 100% !important;
+    padding: .175rem 0rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out
+}
+ng-autocomplete .autocomplete-container {
+    box-shadow:none;
+    height: auto;
+}
+ng-autocomplete .autocomplete-container .input-container input{
+
+    line-height: 30px;
+    height: 30px;
+}
+
+.dantooine-post-cover-img-andreas{background-color:#ccc;background-position:center;background-size:cover}
+
+
+.dantooine-post-cover-bg-rosa{
+    background-color:#d3749d;
+    @extend .setdefheight;
+}
+.dantooine-post-cover-bg-orange{
+    background-color:#f39e33;
+    @extend .setdefheight;
+}
+.dantooine-post-cover-bg-lightblue{
+    background-color:#a5daf0;
+    @extend .setdefheight;
+}
+
+
+
+.dantooine-post-cover-bg-lila{ background-color:#847db4;  @extend .setdefheight;}
+.dantooine-post-cover-bg-brown{ background-color:#b39f70; @extend .setdefheight;}
+.dantooine-post-cover-bg-neonblue{ background-color:#4ab5e1; @extend .setdefheight;}
+.dantooine-post-cover-bg-lightrosa{ background-color:#e3a8c1; @extend .setdefheight;}
+.dantooine-post-cover-bg-grey{ background-color:#a5a5a5; @extend .setdefheight;}
+.dantooine-post-cover-bg-grey2{ background-color:#ccc; @extend .setdefheight;}
+.icon-bb-berattelse2{ background-color:#ccc; @extend .setdefheight;}
+.icon-bb-deckare2{ background-color:#ccc; @extend .setdefheight;}
+.dantooine-post-cover-bg-lightgrey{ background-color:#d2d2d2; @extend .setdefheight;}
+.dantooine-post-cover-bg-lightgreen{ background-color:#d0e3a6; @extend .setdefheight;}
+.dantooine-post-cover-bg-lightbrun{ background-color:#d9cfb7; @extend .setdefheight;}
+.dantooine-post-cover-bg-lightgul{ background-color:#fff7b0; @extend .setdefheight;}
+.dantooine-post-cover-bg-lightorange{ background-color:#f9cf99; @extend .setdefheight;}
+.dantooine-post-cover-bg-green{ background-color:#b4d171; @extend .setdefheight;}
+.dantooine-post-cover-bg-lightlila{ background-color:#c1bed9; @extend .setdefheight;}
+.dantooine-post-cover-bg-lightgrey{ background-color:#ccc; @extend .setdefheight;}
+.dantooine-post-cover-bg-gul{ background-color:#fff061; @extend .setdefheight;}
+
+.setdefheight{
+    min-height: 170px;
+}

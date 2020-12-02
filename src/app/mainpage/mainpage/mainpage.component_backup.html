@@ -1,0 +1,280 @@
+<div class="container dantooine-container">
+  
+    <div class="d-flex p-2 justify-content-star align-items-center">
+      <h2>Skrivboken</h2>
+    </div>
+  
+    <div class="row p-2 d-flex align-items-center">
+  
+      
+      <div class="col-md-9 col-sm-12">
+  
+          <div class="row">
+              
+  
+              <div class="col-md-12 col-sm-12 d-flex align-items-start flex-wrap">
+  
+  
+                <div class="col-12 d-flex align-items-start p-2">            
+  
+                      <a (click)="getCatOnClick(0)" class="btn dantooine-btn-category btn-category-item btn-dantooine-spoken">
+                          <i class="icon-bb-penna"></i>
+                      </a>
+                      <p class="ml-2 category-item-title align-self-center">Visa alla</p>
+                  
+                </div>        
+  
+                  <div class="p-2 text-center">
+                      <a (click)="getCatOnClick(3)" class="btn dantooine-btn-category btn-category-item btn-dantooine-berattelse">
+                          <i class="icon-bb-berattelse"></i>
+                      </a>
+                      <p class="category-item-title">Berättelse</p>
+                  </div>
+  
+  
+                  <div class="p-2 text-center">
+                      <a (click)="getCatOnClick(8)" class="btn dantooine-btn-category btn-category-item btn-dantooine-deckare">
+                          <i class="icon-bb-deckare"></i>
+                      </a>
+                      <p class="category-item-title">Deckare</p>
+                  </div>
+  
+  
+                  <div class="p-2 text-center">
+                      <a (click)="getCatOnClick(4)" class="btn dantooine-btn-category btn-category-item btn-dantooine-dikt">
+                          <i class="icon-bb-dikt"></i>
+                      </a>
+                      <p class="category-item-title">Dikter</p>
+                  </div>
+  
+                  <div class="p-2 text-center">
+                      <a (click)="getCatOnClick(9)" class="btn dantooine-btn-category btn-category-item btn-dantooine-djur">
+                          <i class="icon-bb-djur"></i>
+                      </a>
+                      <p class="category-item-title">Djur</p>
+                  </div>
+  
+  
+                  <div (click)="getCatOnClick(10)" class="p-2 text-center">
+                      <a class="btn dantooine-btn-category btn-category-item btn-dantooine-fantasy">
+                          <i class="icon-bb-fantasy"></i>
+                      </a>
+                      <p class="category-item-title">Fantasy</p>
+                  </div>
+  
+  
+                  <div (click)="getCatOnClick(16)" class="p-2 text-center">
+                      <a class="btn dantooine-btn-category btn-category-item btn-dantooine-skratta">
+                          <i class="icon-bb-skratta"></i>
+                      </a>
+                      <p class="category-item-title">Humor</p>
+                  </div>
+  
+  
+                  <div class="p-2 text-center">
+                      <a (click)="getCatOnClick(21)" class="btn dantooine-btn-category btn-category-item btn-dantooine-hastar">
+                          <i class="icon-bb-hastar"></i>
+                      </a>
+                      <p class="category-item-title">Hästar</p>
+                  </div>
+  
+  
+                  <div class="p-2 text-center">
+                      <a (click)="getCatOnClick(12)" class="btn dantooine-btn-category btn-category-item btn-dantooine-karlek">
+                          <i class="icon-bb-karlek"></i>
+                      </a>
+                      <p class="category-item-title">Kärlek</p>
+                  </div>
+  
+  
+                  <div class="p-2 text-center">
+                      <a (click)="getCatOnClick(13)" class="btn dantooine-btn-category btn-category-item btn-dantooine-ramsa">
+                          <i class="icon-bb-ramsa"></i>
+                      </a>
+                      <p class="category-item-title">Ramsor</p>
+                  </div>            
+  
+  
+                  <div class="p-2 text-center">
+                      <a (click)="getCatOnClick(11)" class="btn dantooine-btn-category btn-category-item btn-dantooine-skrack">
+                          <i class="icon-bb-skrack2"></i>
+                      </a>
+                      <p class="category-item-title">Skräck</p>
+                  </div>            
+  
+  
+                  <div class="p-2 text-center">
+                      <a (click)="getCatOnClick(15)" class="btn dantooine-btn-category btn-category-item btn-dantooine-sorgligt">
+                          <i class="icon-bb-sorgligt"></i>
+                      </a>
+                      <p class="category-item-title">Sorgligt</p>
+                  </div>            
+  
+  
+                  <div (click)="getCatOnClick(17)" class="p-2 text-center">
+                      <a class="btn dantooine-btn-category btn-category-item btn-dantooine-spanning">
+                          <i class="icon-bb-spanning"></i>
+                      </a>
+                      <p class="category-item-title">Spänning</p>
+                  </div>            
+  
+  
+                  <div class="p-2 text-center">
+                      <a (click)="getCatOnClick(18)" class="btn dantooine-btn-category btn-category-item btn-dantooine-spoken">
+                          <i class="icon-bb-spoken"></i>
+                      </a>
+                      <p class="category-item-title">Spöken</p>
+                  </div>            
+  
+  
+                  <div class="p-2 text-center">
+                      <a (click)="getCatOnClick(5)" class="btn dantooine-btn-category btn-category-item btn-dantooine-tankar">
+                          <i class="icon-bb-tankar"></i>
+                      </a>
+                      <p class="category-item-title">Tankar</p>
+                  </div>   
+  
+  
+                  <div class="p-2 text-center">
+                      <a (click)="getCatOnClick(19)" class="btn dantooine-btn-category btn-category-item btn-dantooine-aventyr">
+                          <i class="icon-bb-aventyr"></i>
+                      </a>
+                      <p class="category-item-title">Äventyr</p>
+                  </div>   
+  
+  
+                  <div (click)="getCatOnClick(6)" class="p-2 text-center">
+                      <a class="btn dantooine-btn-category btn-category-item btn-dantooine-ovrigt">
+                          <i class="icon-bb-ovrigt"></i>
+                      </a>
+                      <p class="category-item-title">Övrigt</p>
+                  </div>   
+      
+              </div>
+          </div>
+  
+          <div class="row mt-4">
+              <div class="col-12">
+                  <form>
+                      <div class="form-row">
+                          <div class="col-9">                            
+                                <ng-autocomplete 
+                                    [data]="data"
+                                    [searchKeyword]="keyword"
+                                    (selected)='selectEvent($event)'
+                                    (inputChanged)='onChangeSearch($event)'
+                                    (inputFocused)='onFocused($event)'
+                                    [itemTemplate]="itemTemplate"
+                                    [notFoundTemplate]="notFoundTemplate"
+                                    minQueryLength='3'>                                 
+                                </ng-autocomplete>
+                                <ng-template #itemTemplate let-item>
+                                    <a [innerHTML]="item.name"></a>
+                                </ng-template>                             
+                                <ng-template #notFoundTemplate let-notFound>
+                                    <div [innerHTML]="notFound"></div>
+                                </ng-template>
+                            
+                          </div>
+                          <div class="col-3">
+                              <button type="submit" class="btn btn-dantooine-green mb-2 btn-block">Sök</button>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+          </div>
+  
+  
+      </div>
+      
+          <div class="col-md-3 col-sm-12 text-center">
+                <img style="width: 125px;" src="/assets/images/blackfisk-skrivboken.png">
+                <a href="#"> 
+              <h4>Vill du skriva din berättelse?</h4>
+              <p>Logga in i ditt Krypin</p>
+              </a>
+          </div>
+      
+    </div>
+
+    <div class="row" >
+     <div class="col-6">
+         <h3>Sökresultat:
+        {{mainCategoryname.name}} </h3>
+    </div>
+     <div class="col-6 text-right">({{glb.showPageMax}} av {{mainPageData.Antal}}
+        <span *ngIf="!mainPageData.Skrivbokenlist || mainPageData.Skrivbokenlist.Antal<=0" class="spinner-border spinner-border-sm" role="status">
+            <span class="sr-only">Laddar...</span>
+        </span>)
+    </div>
+    </div>      
+    
+    <div class="pb-3 d-flex justify-content-center" *ngIf="!mainPageData.Skrivbokenlist || mainPageData.Skrivbokenlist.Antal <= 0">
+       
+       <div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status">
+        <span class="sr-only">Laddar...</span>
+      </div>
+    </div>
+    <!-- skrivboken lista med items Start-->
+    <div class="row" >  
+      <!-- skrivboken item start-->
+   
+      <div *ngFor="let itm of mainPageData.Skrivbokenlist | slice:0:glb.showPageMax; let i = index;  " class="col-lg-4 col-md-6 col-12" >
+        <div class="d-flex flex-column bd-highlight dantooine-post-width">
+            <div class="mb-auto bd-highlight">
+  
+                <div class="p-3 d-flex bd-highlight align-items-center">
+                    <div class="bd-highlight d-flex align-items-center">
+                        <p [ngClass]="seticoBGClasses(itm.Category)" class="btn btn-category-item-card mb-0">
+                            <i [ngClass]="seticoClasses(itm.Category)"></i>
+                        </p>        
+                        <a href="#" id="goto{{itm.SkrivID}}" class="link-clean" (click)="gotodetail(itm.SkrivID)"><p class="ml-2 mb-0" style="font-size:22px;">{{itm.Title}}</p></a>
+                    </div>  
+  
+                    <div class="ml-auto bd-highlight"> <!-- Lägg till klassen d-none för att dölja om inte menyn ska synas-->
+                        <div class="dropdown dropleft">
+                            <button class="btn btn-light btn-circle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <fa-icon [icon]="elipsIcon"></fa-icon>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Gå till boken</a>
+                                <a class="dropdown-item" href="#">Skriv boktips</a>
+                                <a class="dropdown-item" href="#">Läser denna just nu</a>
+                                <a class="dropdown-item" href="#">Ta bort från listan</a>
+                            </div>      
+                        </div>
+                    </div>
+                </div>
+  
+            <a href="#" (click)="gotodetail(itm.SkrivID)" class="link-clean"> 
+                <div [ngClass]="setBGClasses(itm.Category)" class="d-flex align-items-center justify-content-center">
+                    <p [ngClass]="setTxtClasses(itm.Category)">{{itm.Title}}</p>
+                </div>
+            </a>
+  
+                <div class="p-3">
+                    <p class="font-weight-light my-0 dantooine-post-cover-text">{{itm.Title}} </p>
+                </div>
+            </div>
+  
+            <div class="p-3 bd-highlight"> 
+                <div class="d-flex align-items-end">
+                    <img src="/assets/images/bok2.jpg" style="width:35px"> 
+                    <a href="#" (click)="gotodetail(itm.SkrivID)" class="link-clean"><p class="dantooine-post-author">Alice</p></a>
+                </div>
+            </div>
+        </div>
+      </div>
+      <!-- skrivboken item slut-->      
+    
+    </div>
+    <!-- skrivboken lista med items slut-->
+    <div class="row pb-3" *ngIf="mainPageData.Skrivbokenlist && glb.showMoreBtn">       
+        <button (click)="showmoreposts()" class="btn btn-outline-secondary mx-auto" >Visa mer</button>
+    </div>
+    
+   
+  </div>
+  <!-- container end-->
+
+  
