@@ -1,0 +1,22 @@
+.kk_aj_visaminneslistan img {
+  max-height: 27px !important;
+  margin-right: 3px;
+  margin-top: 3px;
+  }
+
+  .kk_aj_productPagerblock {
+    padding-top: 1.5rem;
+  }
+
+  .AgeformBlock{
+    a{
+      // &:hover{
+      //   background-color: #ed6d04!important;
+      //   color:#fff;
+      // }
+      &.vald{
+        background-color: #ed6d04!important;
+        color:#fff;
+      }
+    }
+  }

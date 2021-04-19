@@ -1,8 +1,12 @@
-import { SkrivbokenAPIService } from './../../../services/skrivbokenAPI/skrivboken-api.service';
+import { clsAdvFilter } from './../../core/models/clsAdvFilter';
+import { KatalogenApiService } from 'src/app/core/services/katalogenApi/katalogen-api.service';
 import { LocationStrategy } from '@angular/common';
-import { Global } from './../../models/global';
-import { Component, OnInit } from '@angular/core';
-import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
+import { Global } from 'src/app/core/models/global';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { faEllipsisV} from '@fortawesome/free-solid-svg-icons';
+import { IpostSearch } from 'src/app/core/interface/ipost-search';
+import { clsPostData } from 'src/app/core/models/clsPostData';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-mainpage',
@@ -10,131 +14,203 @@ import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./mainpage.component.scss']
 })
 export class MainpageComponent implements OnInit {
+
+  p:number=1;
   mainPageData:any=[];
   mainCategoryname:any;
   elipsIcon = faEllipsisV;
+  currarrid:number= 0;
+  currfid:number= 0;
+  currAgeid:number=0;
+  currsearchstr:string;
   tmpStyles:any;
+  resultatantal:any;
+  showPageMax:any;
+  keyword = 'ansokningtitle';
+  autocompletedata:any = [];
+  showNoPostToShow:boolean= false;
+  filterMetadata:any= { count: -1 };
 
-  constructor(private wpApi:SkrivbokenAPIService, private glb:Global, private location: LocationStrategy) { 
-    
+  filterterm:clsAdvFilter=new clsAdvFilter
+  postdata:IpostSearch = new clsPostData;
+debug:any="test"
+  constructor(private wpApi:KatalogenApiService, private glb:Global, private location: LocationStrategy,private cd:ChangeDetectorRef, ) {
+
+console.log("href: " + window.location.href)
+    this.showPageMax= glb.showPageMax;
     history.pushState(null, null, window.location.href);
     // check if back or forward button is pressed.
     this.location.onPopState(() => {
         history.pushState(null, null, window.location.href);
-        
     });
-
   }
 
   ngOnInit(): void {
-    
+    // this.debug= this.activatedRoute.snapshot.queryParams
     this.getpagedata();
-    // this.showPageMax = this.glb.showPageMax;
     this.wpApi.currentPageDataHandler.subscribe(()=>{
       // handles global events
     });
-
+    this.glb.mainJsonKatalogItemListHandler.subscribe(()=>{
+      this.getpagedata();
+    });
   }
 
   ngAfterViewChecked() {
-    if(this.glb.currentdetailSkrivid>0){
-      this.scroll('#goto'+ this.glb.currentdetailSkrivid);
-      this.glb.currentdetailSkrivid=0;
-    }
-    
+    this.cd.detectChanges(); // använd för att inte får expressionchangedAfterItHasbeenCheckedError
   }
 
-  loadPageData(id:string){        
-      this.wpApi.getByCatId(id).subscribe(Response => {
-        this.glb.mainJsonSkrivbokList = Response         
-        this.mainCategoryname= this.glb.getCategoryName(Number(id));
-        this.mainPageData= this.glb.mainJsonSkrivbokList;
-       
-      });    
-  }
-  
   getpagedata(){
-    if(this.glb.isEmptyObj(this.glb.mainJsonSkrivbokList.Skrivbokenlist)){
-      this.pagedataSetting();
-      this.loadPageData("0");      
-      this.mainCategoryname= this.glb.getCategoryName(0);
+    console.log("laddar ny data: ", this.glb.mainJsonKatalogItemList);
+    if(this.glb.isEmptyObj(this.glb.mainJsonKatalogItemList)){
+      this.loadPageData(this.postdata);
     }else{
-      console.log(this.glb.showPageMax + " glb.pageSize: "+ this.glb.pageSize);
-      this.mainCategoryname= this.glb.currentCategoryName;
-      this.mainPageData= this.glb.mainJsonSkrivbokList;
-      
+      console.log("data finns: ", this.glb.mainJsonKatalogItemList.kk_aj_admin);
+
+      this.mainPageData = this.glb.mainJsonKatalogItemList.kk_aj_admin.ansokningarlista.ansokningar;
+      this.resultatantal = this.mainPageData.length;
+      // console.log(this.glb.showPageMax + " glb.pageSize: "+ this.glb.pageSize);
+      // this.mainCategoryname= this.glb.currentCategoryName;
     }
   }
 
-  getCatOnClick(id:any){
+  loadPageData(srhdata:IpostSearch){
+    this.resetsearch();
     this.mainPageData=[];
-    this.mainCategoryname= this.glb.getCategoryName(9999);
-    this.loadPageData(id);  
-    // this.test();
-    this.pagedataSetting();
+    this.wpApi.getKatalogList(srhdata).subscribe(Response => {
+      this.glb.mainJsonKatalogItemList = Response
+      // this.resultatantal = this.glb.mainJsonKatalogItemList.kk_aj_admin.ansokningarlista.ansokningarcount;
+
+      this.mainPageData = this.glb.mainJsonKatalogItemList.kk_aj_admin.ansokningarlista.ansokningar;
+      this.resultatantal = this.mainPageData.length;
+      console.log("ny data är laddad: ", this.glb.mainJsonKatalogItemList);
+      this.noresult();
+    })
   }
 
-  gotodetail(id:any){
-    this.glb.currentdetailSkrivid= id;
-    this.glb.showDetailpage();    
+  loadFreetextSearchData(srhdata:IpostSearch){
+    this.resetsearch();
+    this.wpApi.getfreeSearchList(srhdata).subscribe(Response => {
+      this.glb.mainJsonKatalogItemList = Response
+      this.resultatantal = this.glb.mainJsonKatalogItemList.kk_aj_admin.ansokningarlista.ansokningarcount
+      this.mainPageData = this.glb.mainJsonKatalogItemList.kk_aj_admin.ansokningarlista.ansokningar
+
+    })
   }
 
-  showmoreposts(){
-    if(this.glb.mainJsonSkrivbokList.Antal > this.glb.showPageMax){
-      let tempantal= this.glb.showPageMax + this.glb.pageSize;
-      
-      if(tempantal>this.glb.mainJsonSkrivbokList.Antal){        
-        this.glb.showPageMax = this.glb.mainJsonSkrivbokList.Antal;
-        this.glb.showMoreBtn= false;
-
-      }else{
-         this.glb.showPageMax = tempantal;         
-      }     
-     
-      if(this.glb.mainJsonSkrivbokList.length <=0){
-        this.loadPageData("0");      
-        this.mainCategoryname= this.glb.getCategoryName(0);
-      }else{
-        this.mainPageData= this.glb.mainJsonSkrivbokList;
+  noresult(){
+    let antal:number = Number(this.glb.mainJsonKatalogItemList.kk_aj_admin.ansokningarlista.ansokningarcount)
+    this.showNoPostToShow= false;
+    if(antal<=1){
+      if(this.glb.mainJsonKatalogItemList.kk_aj_admin.ansokningarlista.ansokningar[0].ansokningtitle == "Finns inget att visa"){
+        this.showNoPostToShow= true
       }
     }
   }
 
-  pagedataSetting(){
-    this.glb.showPageMax= 12;
-    this.glb.pageSize=3;
-    this.glb.showMoreBtn= true;
-  }
-  
-  setBGClasses(catID) {
-    return this.glb.catstylehandler(catID).imgbgClass;
-    
+  resetsearch(){
+    this.resultatantal=0;
+    this.showNoPostToShow = false;
   }
 
-  setTxtClasses(catID) {
-        let tmpfontobj =this.glb.catstylehandler(catID) 
-
-        return tmpfontobj.rubfontClass + " " +tmpfontobj.rubColorClass
+  MainSearchFormClick(){
+    this.loadPageData(this.postdata);
+    this.resetAdvsearchform();
+    this.showNoPostToShow = false;
+    this.scroll('#AnchorSearchlist');
   }
 
-  seticoClasses(catID) {
-    return this.glb.catstylehandler(catID).catIconClass;
+  formFreetextSearchClick(){
+    if(this.currsearchstr){
+      this.postdata = new clsPostData
+      this.postdata.searchstr = this.currsearchstr;
+
+      this.loadFreetextSearchData(this.postdata);
+      this.scroll('#AnchorSearchlist');
+    }
+    return false;
   }
 
-  seticoBGClasses(catID) {
-    return this.glb.catstylehandler(catID).catIconBGClass;
-  } 
-  
+  formArrClick(arrid:number){
+    this.currarrid= arrid;
+    this.postdata.arrtypid = String(arrid);
+  }
+
+  formKonstFormClick(konstformid:number){
+    this.currfid= konstformid;
+    this.postdata.konstartid = String(konstformid);
+  }
+
+  ageFormClick(ageformStartYear:number,ageformStopYear:number){
+    this.currAgeid= ageformStopYear;
+    this.postdata.startyear = String(ageformStartYear);
+    this.postdata.stopyear = String(ageformStopYear);
+  }
+
+  resetFormClick(){
+    this.postdata = new clsPostData;
+    this.currarrid = Number(this.postdata.arrtypid);
+    this.currfid = Number(this.postdata.konstartid);
+    this.currAgeid= 0;
+  }
+
+  resetAdvsearchform(){
+    this.filterterm.takhojd ="";
+    this.filterterm.bokningsbar="";
+    this.filterterm.kostnad=0;
+    this.filterterm.morklaggning="";
+    this.filterterm.tid=0;
+    return false;
+  }
+
+  autocompleteGetData(searchobj:IpostSearch){
+    this.wpApi.getfreeSearchList(searchobj).subscribe(Response => {
+      let tmpobj:any= Response
+      this.autocompletedata = tmpobj.kk_aj_admin.ansokningarlista.ansokningar
+    })
+  }
+  selectEvent(item) {
+    this.currsearchstr = item.ansokningtitle
+    console.log(item.ansokningtitle)
+    this.formFreetextSearchClick()
+  }
+  onChangeSearch(val: string) {
+    let tmpauto:IpostSearch = new clsPostData
+    tmpauto.searchstr= val;
+    this.currsearchstr = val;
+    this.autocompleteGetData(tmpauto);
+    // fetch remote data from here
+    // And reassign the 'data' which is binded to 'data' property.
+  }
+  onFocused(e){
+    // do something when input is focused
+  }
+
+  autofilter(){
+    return (items) => items
+  }
+
+  sorteralista(typ:string){
+    console.log("typ: " + typ);
+    this.glb.filterSortera(typ);
+  }
+
   scroll(skrivid) {
-    // document.querySelector(skrivid).scrollIntoView({behavior: 'smooth'});
-    document.querySelector(skrivid).scrollIntoView();
+    document.querySelector(skrivid).scrollIntoView({behavior: 'smooth'});
   }
 
-  test(){
-    let lista:any=[]
-    lista = this.glb.getCategorysearch("häst")
-    let namn= lista;
-    console.log("kör: " + namn[1].Title);
+  hideSpinner(antalposter:number){
+    antalposter= this.filterMetadata.count
+    let retobj:boolean= false;
+
+    if(antalposter==0){
+      retobj = true;
+    }
+    return retobj;
   }
 
+  gotodetail(id:any){
+    this.glb.currentAnsokningid= id;
+    this.glb.showDetailpage();
+  }
 }

@@ -1,264 +1,341 @@
-<div class="container dantooine-container">
-  
-    <div class="d-flex p-2 justify-content-star align-items-center">
-      <h2>Skrivboken</h2>
-    </div>
-  
-    <div class="row p-2 d-flex align-items-center">
-  
-      
-      <div class="col-md-9 col-sm-12">
-  
-          <div class="row">
-              
-  
-              <div class="col-md-12 col-sm-12 d-flex align-items-start flex-wrap">
-  
-  
-                <div class="col-12 d-flex align-items-start p-2">            
-  
-                      <a (click)="getCatOnClick(0)" class="btn dantooine-btn-category btn-category-item btn-dantooine-spoken">
-                          <i class="icon-bb-penna"></i>
-                      </a>
-                      <p class="ml-2 category-item-title align-self-center">Visa alla</p>
-                  
-                </div>        
-  
-                  <div class="p-2 text-center">
-                      <a (click)="getCatOnClick(3)" class="btn dantooine-btn-category btn-category-item btn-dantooine-berattelse">
-                          <i class="icon-bb-berattelse"></i>
-                      </a>
-                      <p class="category-item-title">Berättelse</p>
-                  </div>
-  
-  
-                  <div class="p-2 text-center">
-                      <a (click)="getCatOnClick(8)" class="btn dantooine-btn-category btn-category-item btn-dantooine-deckare">
-                          <i class="icon-bb-deckare"></i>
-                      </a>
-                      <p class="category-item-title">Deckare</p>
-                  </div>
-  
-  
-                  <div class="p-2 text-center">
-                      <a (click)="getCatOnClick(4)" class="btn dantooine-btn-category btn-category-item btn-dantooine-dikt">
-                          <i class="icon-bb-dikt"></i>
-                      </a>
-                      <p class="category-item-title">Dikter</p>
-                  </div>
-  
-                  <div class="p-2 text-center">
-                      <a (click)="getCatOnClick(9)" class="btn dantooine-btn-category btn-category-item btn-dantooine-djur">
-                          <i class="icon-bb-djur"></i>
-                      </a>
-                      <p class="category-item-title">Djur</p>
-                  </div>
-  
-  
-                  <div (click)="getCatOnClick(10)" class="p-2 text-center">
-                      <a class="btn dantooine-btn-category btn-category-item btn-dantooine-fantasy">
-                          <i class="icon-bb-fantasy"></i>
-                      </a>
-                      <p class="category-item-title">Fantasy</p>
-                  </div>
-  
-  
-                  <div (click)="getCatOnClick(16)" class="p-2 text-center">
-                      <a class="btn dantooine-btn-category btn-category-item btn-dantooine-skratta">
-                          <i class="icon-bb-skratta"></i>
-                      </a>
-                      <p class="category-item-title">Humor</p>
-                  </div>
-  
-  
-                  <div class="p-2 text-center">
-                      <a (click)="getCatOnClick(21)" class="btn dantooine-btn-category btn-category-item btn-dantooine-hastar">
-                          <i class="icon-bb-hastar"></i>
-                      </a>
-                      <p class="category-item-title">Hästar</p>
-                  </div>
-  
-  
-                  <div class="p-2 text-center">
-                      <a (click)="getCatOnClick(12)" class="btn dantooine-btn-category btn-category-item btn-dantooine-karlek">
-                          <i class="icon-bb-karlek"></i>
-                      </a>
-                      <p class="category-item-title">Kärlek</p>
-                  </div>
-  
-  
-                  <div class="p-2 text-center">
-                      <a (click)="getCatOnClick(13)" class="btn dantooine-btn-category btn-category-item btn-dantooine-ramsa">
-                          <i class="icon-bb-ramsa"></i>
-                      </a>
-                      <p class="category-item-title">Ramsor</p>
-                  </div>            
-  
-  
-                  <div class="p-2 text-center">
-                      <a (click)="getCatOnClick(11)" class="btn dantooine-btn-category btn-category-item btn-dantooine-skrack">
-                          <i class="icon-bb-skrack2"></i>
-                      </a>
-                      <p class="category-item-title">Skräck</p>
-                  </div>            
-  
-  
-                  <div class="p-2 text-center">
-                      <a (click)="getCatOnClick(15)" class="btn dantooine-btn-category btn-category-item btn-dantooine-sorgligt">
-                          <i class="icon-bb-sorgligt"></i>
-                      </a>
-                      <p class="category-item-title">Sorgligt</p>
-                  </div>            
-  
-  
-                  <div (click)="getCatOnClick(17)" class="p-2 text-center">
-                      <a class="btn dantooine-btn-category btn-category-item btn-dantooine-spanning">
-                          <i class="icon-bb-spanning"></i>
-                      </a>
-                      <p class="category-item-title">Spänning</p>
-                  </div>            
-  
-  
-                  <div class="p-2 text-center">
-                      <a (click)="getCatOnClick(18)" class="btn dantooine-btn-category btn-category-item btn-dantooine-spoken">
-                          <i class="icon-bb-spoken"></i>
-                      </a>
-                      <p class="category-item-title">Spöken</p>
-                  </div>            
-  
-  
-                  <div class="p-2 text-center">
-                      <a (click)="getCatOnClick(5)" class="btn dantooine-btn-category btn-category-item btn-dantooine-tankar">
-                          <i class="icon-bb-tankar"></i>
-                      </a>
-                      <p class="category-item-title">Tankar</p>
-                  </div>   
-  
-  
-                  <div class="p-2 text-center">
-                      <a (click)="getCatOnClick(19)" class="btn dantooine-btn-category btn-category-item btn-dantooine-aventyr">
-                          <i class="icon-bb-aventyr"></i>
-                      </a>
-                      <p class="category-item-title">Äventyr</p>
-                  </div>   
-  
-  
-                  <div (click)="getCatOnClick(6)" class="p-2 text-center">
-                      <a class="btn dantooine-btn-category btn-category-item btn-dantooine-ovrigt">
-                          <i class="icon-bb-ovrigt"></i>
-                      </a>
-                      <p class="category-item-title">Övrigt</p>
-                  </div>   
-      
-              </div>
-          </div>
-  
-          <div class="row mt-4">
-              <div class="col-12">
-                  <form>
-                      <div class="form-row">
-                          <div class="col-9">                            
-                            <input type="text" class="form-control" placeholder="Sök skribent">                               
-                          </div>
-                          <div class="col-3">
-                              <button type="submit" class="btn btn-dantooine-green mb-2 btn-block">Sök</button>
-                          </div>
-                      </div>
-                  </form>
-              </div>
-          </div>
-  
-  
-      </div>
-      
-          <div class="col-md-3 col-sm-12 text-center">
-                <img style="width: 125px;" src="/assets/images/blackfisk-skrivboken.png">
-                <a > 
-              <h4>Vill du skriva din berättelse?</h4>
-              <p>Logga in i ditt Krypin</p>
-              </a>
-          </div>
-      
-    </div>
 
-    <div class="row" >
-     <div class="col-6">
-         <h3>Sökresultat:
-        {{mainCategoryname.name}} </h3>
+id= {{debug}}
+
+<!-- Main search -->
+<div class="small-12 columns kk_aj_superProductListBlock">
+    <div class="row kk_aj_mainLogoheaderblock">
+
+        <!-- use a tag for links to other locations -->
+        <!-- use button tag for on page actions -->
+        <div class="small-12  columns kk_aj_searchHeader" >
+            <h1>Kulturkatalogen Väst</h1>
+
+            <div class="small-12 medium-9">
+
+                <ul id="pagemenyblock">
+                    <li><a href="#kk_aj_mainFreetextSearchblock"><i class="fa fa-caret-right" aria-hidden="true"></i> Textsök</a></li>
+                    <li><a href="#kk_aj_mainsearchblock"><i class="fa fa-caret-right" aria-hidden="true"></i> Sök genom kategori</a></li>
+
+                </ul>
+            </div>
+        </div>
+
     </div>
-     <div class="col-6 text-right">({{glb.showPageMax}} av {{mainPageData.Antal}}
-        <span *ngIf="!mainPageData.Skrivbokenlist || mainPageData.Skrivbokenlist.Antal<=0" class="spinner-border spinner-border-sm" role="status">
-            <span class="sr-only">Laddar...</span>
-        </span>)
-    </div>
-    </div>      
-    
-    <div class="pb-3 d-flex justify-content-center" *ngIf="!mainPageData.Skrivbokenlist || mainPageData.Skrivbokenlist.Antal <= 0">
-       
-       <div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status">
-        <span class="sr-only">Laddar...</span>
-      </div>
-    </div>
-    <!-- skrivboken lista med items Start-->
-    <div class="row" >  
-      <!-- skrivboken item start-->
-   
-      <div *ngFor="let itm of mainPageData.Skrivbokenlist | slice:0:glb.showPageMax; let i = index;  " class="col-lg-4 col-md-6 col-12" >
-        <div class="d-flex flex-column bd-highlight dantooine-post-width">
-            <div class="mb-auto bd-highlight">
-  
-                <div class="p-3 d-flex bd-highlight align-items-center">
-                    <div class="bd-highlight d-flex align-items-center">
-                        <p [ngClass]="seticoBGClasses(itm.Category)" class="btn btn-category-item-card mb-0">
-                            <i [ngClass]="seticoClasses(itm.Category)"></i>
-                        </p>        
-                        <a id="goto{{itm.SkrivID}}" class="link-clean" (click)="gotodetail(itm.SkrivID)"><p class="ml-2 mb-0" style="font-size:22px;">{{itm.Title}}</p></a>
-                    </div>  
-  
-                    <div class="ml-auto bd-highlight"> <!-- Lägg till klassen d-none för att dölja om inte menyn ska synas-->
-                        <div class="dropdown dropleft">
-                            <button class="btn btn-light btn-circle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <fa-icon [icon]="elipsIcon"></fa-icon>
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" >Gå till boken</a>
-                                <a class="dropdown-item" >Skriv boktips</a>
-                                <a class="dropdown-item" >Läser denna just nu</a>
-                                <a class="dropdown-item" >Ta bort från listan</a>
-                            </div>      
-                        </div>
-                    </div>
+</div>
+
+<div id="kk_aj_maincovid19block" class="small-12 columns kk_aj_mainsearchblock">
+    <div class="row ">
+        <div class="small-12 columns ">
+            <h2>Kulturarrangemang</h2>
+            <h3>Covid 19-anpassade: streaming, livestreaming och/eller att utföras utomhus</h3>
+            <div class="row collapse ">
+                <div class="small-12 columns text-center">
+                    <a href="/Kulturkatalogen-Väst-Sök-i-kulturkatalog/covid19"  name="kk_aj_btnfreetextSearch" class="button tiny round text-center" tabindex="0"
+                    style=" margin-top: 2rem; margin-bottom: 4rem; font-size: 0.9rem; color:#fff;">Gå TILL LISTA MED ARRANGEMANG</a>
                 </div>
-  
-            <a  (click)="gotodetail(itm.SkrivID)" class="link-clean"> 
-                <div [ngClass]="setBGClasses(itm.Category)" class="d-flex align-items-center justify-content-center">
-                    <p [ngClass]="setTxtClasses(itm.Category)">{{itm.Title}}</p>
-                </div>
-            </a>
-  
-                <div class="p-3">
-                    <p class="font-weight-light my-0 dantooine-post-cover-text">{{itm.Title}} </p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="kk_aj_mainFreetextSearchblock" class="small-12 columns kk_aj_mainFreetextSearchblock">
+    <div class="row ">
+    <div class="small-12 columns " >
+           <h2>Textsök i Kulturkatalogen Väst...</h2>
+        <div class="row ">
+            <div class="small-12 columns">
+
+                <label for="kk_aj_freetextSearch" style="display:none;">Textsök i Kulturkatalogen Väst...</label>
+                <div class="ng-autocomplete">
+                  <ng-autocomplete
+                    [data]="autocompletedata"
+                    [searchKeyword]="keyword"
+                    [customFilter] = autofilter()
+                    (selected)='selectEvent($event)'
+                    (inputChanged)='onChangeSearch($event)'
+                    (inputFocused)='onFocused($event)'
+                    [itemTemplate]="itemTemplate"
+                    [notFoundTemplate]="notFoundTemplate"
+                    minQueryLength=3
+                    debounceTime=400
+                    #ngaoutoControll>
+                  </ng-autocomplete>
+
+                  <ng-template #itemTemplate let-item>
+                  <a [innerHTML]="item.ansokningtitle + ' (' + item.ansokningutovare + ')'"></a>
+                  </ng-template>
+
+                  <ng-template #notFoundTemplate let-notFound>
+                  <div [innerHTML]="notFound"></div>
+                  </ng-template>
+                  </div>
+            </div>
+            <div class="small-12 columns text-center">
+                <a href="#" (click)="formFreetextSearchClick()" id="kk_aj_btnfreetextSearch" name="kk_aj_btnfreetextSearch" class="button tiny round" tabindex="2" >HITTA ARRANGEMANG</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+ <div id="kk_aj_mainsearchblock" class="small-12 columns kk_aj_mainsearchblock">
+    <div class="row kk_aj_mainsearchblock">
+        <div class="small-12 columns " >
+           <h2>...eller sök genom kategori</h2>
+        </div>
+        <div class="large-4 columns ">
+            <h3>Välj arrangemangstyper</h3>
+            <div class="ArrangemangtypBlock">
+                <a id="val_alla" (click)="formArrClick(0)" [ngClass]="{'vald': currarrid == 0}"   rel="0" class="searchformbutton vald" tabindex="3">Alla</a>
+                <a id="val_Resmalsbesok" (click)="formArrClick(7)" [ngClass]="{'vald': currarrid == 7}"  rel="7" class="searchformbutton" tabindex="3">Besöksmål med resestöd</a>
+                <a id="val_Forestallning" (click)="formArrClick(1)" [ngClass]="{'vald': currarrid == 1}" rel="1" class="searchformbutton" tabindex="4">Föreställning på turné</a>
+                <a id="val_Skolbio" (click)="formArrClick(8)" [ngClass]="{'vald': currarrid == 8}" rel="8" class="searchformbutton" tabindex="5">Skolbio</a>
+                <a id="val_Utstallningpaturne" (click)="formArrClick(2)" [ngClass]="{'vald': currarrid == 2}" rel="2" class="searchformbutton" tabindex="6">Utställning på turné</a>
+                <a id="val_Kulturpedagogiskaprojekt" (click)="formArrClick(4)" [ngClass]="{'vald': currarrid == 4}" rel="4" class="searchformbutton" tabindex="7">Workshops/Projekt</a>
+            </div>
+        </div>
+
+        <div class="large-7 large-offset-1 columns mainkonstformblock" >
+            <div class="large-12 columns "> <h3>Välj konstform</h3></div>
+            <div class="large-6 columns ">
+                <div class="kontformBlock">
+                    <a id="val_allakonstformer" (click)="formKonstFormClick(0)" [ngClass]="{'vald': currfid == 0}" rel="0" class="searchformbutton" tabindex="1">Alla</a>
+                    <a id="val_annanScenkonst" (click)="formKonstFormClick(12)" [ngClass]="{'vald': currfid == 12}" rel="12" class="searchformbutton" tabindex="2">Annan scenkonst</a>
+                    <a id="val_arkitektur" (click)="formKonstFormClick(1)" [ngClass]="{'vald': currfid == 1}" rel="1" class="searchformbutton" tabindex="3">Arkitektur</a>
+                    <a id="val_dans" (click)="formKonstFormClick(2)" [ngClass]="{'vald': currfid == 2}" rel="2" class="searchformbutton" tabindex="4">Dans</a>
+                    <a id="val_film" (click)="formKonstFormClick(3)" [ngClass]="{'vald': currfid == 3}" rel="3" class="searchformbutton" tabindex="5">Film & media</a>
+                    <a id="val_formDesign" (click)="formKonstFormClick(4)" [ngClass]="{'vald': currfid == 4}" rel="4" class="searchformbutton" tabindex="6">Konst, form & design</a>
+                    <a id="val_litteraturberattande" (click)="formKonstFormClick(5)" [ngClass]="{'vald': currfid == 5}" rel="5" class="searchformbutton" tabindex="7">Litteratur, berättande & skrivande</a>
                 </div>
             </div>
-  
-            <div class="p-3 bd-highlight"> 
-                <div class="d-flex align-items-end">
-                    <img src="/assets/images/bok2.jpg" style="width:35px"> 
-                    <a  (click)="gotodetail(itm.SkrivID)" class="link-clean"><p class="dantooine-post-author">Alice</p></a>
+            <div class="large-6 columns">
+                <div class="kontformBlock">
+                    <a id="val_musik" (click)="formKonstFormClick(6)" [ngClass]="{'vald': currfid == 6}" rel="6" class="searchformbutton" tabindex="8">Musik</a>
+                    <a id="val_naturochkultruarv" (click)="formKonstFormClick(7)" [ngClass]="{'vald': currfid == 7}" rel="7" class="searchformbutton" tabindex="9">Natur- och  kulturarv</a>
+                    <a id="val_nycirkus" (click)="formKonstFormClick(8)" [ngClass]="{'vald': currfid == 8}" rel="8" class="searchformbutton" tabindex="10">Nycirkus/cirkus</a>
+                    <a id="val_teknik" (click)="formKonstFormClick(11)" [ngClass]="{'vald': currfid == 11}" rel="11" class="searchformbutton" tabindex="13">Science Center</a>
+                    <a id="val_slojd" (click)="formKonstFormClick(9)" [ngClass]="{'vald': currfid == 9}" rel="9" class="searchformbutton" tabindex="11">Slöjd</a>
+                    <a id="val_teater" (click)="formKonstFormClick(10)" [ngClass]="{'vald': currfid == 10}" rel="10" class="searchformbutton" tabindex="12">Teater</a>
+
                 </div>
             </div>
         </div>
-      </div>
-      <!-- skrivboken item slut-->      
-    
-    </div>
-    <!-- skrivboken lista med items slut-->
-    <div class="row pb-3" *ngIf="mainPageData.Skrivbokenlist && glb.showMoreBtn">       
-        <button (click)="showmoreposts()" class="btn btn-outline-secondary mx-auto" >Visa mer</button>
-    </div>
-    
-   
-  </div>
-  <!-- container end-->
 
-  
+      <div class="large-12 columns ">
+          <h3>Välj åldersintervall</h3>
+          <div class="AgeformBlock d-flex justify-content-left ">
+            <a (click)="ageFormClick(0,0)" [ngClass]="{'vald': currAgeid == 0}" class="p-2 col-example bg-light ml-0 mr-1 searchformbutton vald">Alla</a>
+            <a (click)="ageFormClick(0,6)" [ngClass]="{'vald': currAgeid == 6}" class="p-2 col-example bg-light ml-1 mr-1 searchformbutton">0-6 år</a>
+            <a (click)="ageFormClick(7,9)" [ngClass]="{'vald': currAgeid == 9}" class="p-2 col-example bg-light ml-1 mr-1 searchformbutton">7-9 år</a>
+            <a (click)="ageFormClick(10,12)" [ngClass]="{'vald': currAgeid == 12}" class="p-2 col-example bg-light ml-1 mr-1 searchformbutton">10-12 år</a>
+            <a (click)="ageFormClick(13,15)" [ngClass]="{'vald': currAgeid == 15}" class="p-2 col-example bg-light ml-1 mr-1 searchformbutton">13-15 år</a>
+            <a (click)="ageFormClick(16,19)" [ngClass]="{'vald': currAgeid == 19}" class="p-2 col-example bg-light ml-1 mr-0 searchformbutton">16-19 år</a>
+          </div>
+      </div>
+      <div class="columns">
+      <div class="small-12 text-center columns kk_aj_searchbuttonblock ">
+          <!-- use a tag for links to other locations -->
+          <!-- search button -->
+          <button type="button" (click)="MainSearchFormClick()" class="button round tiny kk_aj_searchformbutton " tabindex="20">HITTA ARRANGEMANG</button>
+
+          <!-- reset button -->
+
+          <button type="button" (click)="resetFormClick()" class="button tiny round kk_aj_searchRensaformbutton jplist-reset-btn"  data-control-type="reset"
+                          data-control-name="reset2"
+                          data-control-action="reset" tabindex="21">NOLLSTÄLL SÖKNING</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="kk_aj_masterproductlistblock" class="small-12 columns ">
+   <div class="row ">
+
+    <div id="AnchorSearchlist" class="small-12 large-8 large-offset-4 hittaarrHeader columns " >
+
+      <h2>Hittade arrangemang (<span *ngIf="!resultatantal || resultatantal<=0" class="spinner-border spinner-border-lg" role="status"><span class="sr-only">Laddar...</span></span><span *ngIf="!showNoPostToShow && filterMetadata.count>0">{{filterMetadata?.count}}</span><span *ngIf="showNoPostToShow || (filterMetadata.count ==0 && !hideSpinner(filterMetadata.count))">0</span>)</h2>
+
+     </div>
+
+<!--Produktlista och filter -->
+<div id="kk_aj_mainproductlistblock" class="small-12 kk_aj_mainproductlistblock ">
+
+    <div class="jplist-ios-button">
+        Förfina sökningen
+    </div>
+
+    <div class="small-12 large-3 columns kk_aj_filterblock jplist-panel">
+        <h3>Förfina sökningen</h3>
+
+        <div class="row">
+            <div class="small-12 columns ">
+                <label for="Bokningsbarfilter" style="display:none;">Bokningsbar t.o.m.</label>
+                <select id="Bokningsbarfilter" name="Bokningsbarfilter"
+                    class="jplist-select" [(ngModel)]="filterterm.bokningsbar">
+                    <option value="">Bokningsbar t.o.m.</option>
+                    <option value="1">Jan-Mar</option>
+                    <option value="2">Apr-Jun</option>
+                    <option value="3">Jul-Sep </option>
+                    <option value="4">Okt-Dec</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="small-12 columns spellangdblock">
+                <h3>Kostnad</h3>
+                <input type="range" class="form-control-range jplist-range-slider" id="formControlRange" min="0" max="60000"
+                [(ngModel)]="filterterm.kostnad">
+                Max {{filterterm.kostnad}} kr
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="small-12 columns spellangdblock">
+                <h3>Spellängd</h3>
+                  <input type="range" class="form-control-range jplist-range-slider" id="formControlRange" min="0" max="360"
+                  [(ngModel)]="filterterm.tid">
+                  Max {{filterterm.tid}} min
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-12 columns ">
+                <label for="Morkläggningfilter" style="display:none;">Mörkläggning</label>
+                <select  id="Morkläggningfilter" [(ngModel)]="filterterm.morklaggning"
+                class="jplist-select">
+                    <option value="">Mörkläggning</option>
+                    <option value="1">Nej</option>
+                    <option value="2">Ja, helst</option>
+                    <option value="3">Ja, nödvändig</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="small-12 columns ">
+                <label for="Takhojdfilter" style="display:none;">Takhöjd</label>
+                <select  id="Takhojdfilter" [(ngModel)]="filterterm.takhojd"
+                class="jplist-select">
+                    <option value="">Takhöjd</option>
+                    <option value="2">Upp till 2 meter</option>
+                    <option value="3">Upp till 3 meter</option>
+                    <option value="4">Upp till 4 meter</option>
+                    <option value="5">Upp till 5 meter</option>
+                    <option value="6">Högre än 5 meter</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="small-12 columns ">
+                <div class="resetbox">
+                    <a href="#"(click)="resetAdvsearchform()" id="kk_aj_reset" type="button" class="button tiny left round kk_aj_searchRensaformbutton jplist-reset-btn ">
+                      Återställ filter
+                    </a>
+                </div>
+                <div id="antalarr" style="display:none;" class="jplist-label" data-type="{all}" data-control-type="pagination-info" data-control-name="paging" data-control-action="paging"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="medium-12 large-8 large-offset-1 columns kk_aj_productlistblock">
+        <div class="row">
+            <div class="small-12 medium-3 ">
+              <label for="Sorterafilter" style="display:none;">Sortera</label>
+              <select (change)="sorteralista($event.target.value)">
+                <option data-path="default">Sortera</option>
+                <option data-path=".kk_aj_title" data-order="asc" data-type="text" value="asc">Sortera A-Ö</option>
+                <option data-path=".kk_aj_title" data-order="desc" data-type="text"  value="desc">Sortera Ö-A</option>
+            </select>
+          </div>
+          <div class=" small-12 medium-9 columns">
+              <a id="kk_aj_cmd_minneslistan" class="button tiny left round kk_aj_visaminneslistan kk_aj_cmd_minneslistan right ">
+                  <img src="https://www.kulturkatalogenvast.org/Portals/_default/Skins/kk_aj_Publik_Bespin/public/images/Add-New-32.png" alt="Visa minneslistan" title="Visa minneslistan"/>Visa minneslistan <span class="cmd_minneslistan"></span>
+              </a>
+          </div>
+          <div class="row" >
+            <div class="medium-12 columns">
+              <pagination-controls
+                previousLabel="Föregående"
+                nextLabel="Nästa"
+                screenReaderPaginationLabel="Pagination"
+                screenReaderPageLabel="Sida"
+                screenReaderCurrentLabel="Du är på sida"
+                (pageChange)="p = $event">
+              </pagination-controls>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mainlist START   -->
+        <div *ngIf="!showNoPostToShow" id="kk_aj_productlist" class="kk_aj_productlist">
+
+          <!-- Item START TODO Extract component-->
+
+          <div class="row kk_aj_arritem " rel="ansokningdate" *ngFor="let item of mainPageData | customFilter:filterterm.konstform:filterterm.bokningsbar:filterterm.kostnad:filterterm.tid:filterterm.morklaggning:filterterm.takhojd:filterMetadata  | paginate: { itemsPerPage: showPageMax, currentPage: p}" >
+              <div class="small-12 medium-4 columns kk_aj_arr_item_thumbnail">
+                <div class=" kk_aj_arr_item_thumbnail_color">
+                  <div class="small-12 bildtestbox">
+                    <a id="goto{{item.ansokningid}}" (click)="gotodetail(item.ansokningid)" class="kk_aj_arr_item_thumbnail_img">
+                      <img src="https://www.kulturkatalogenvast.org/Portals/0/kulturkatalogenArrImages/{{item.ansokningMediaImage.MediaUrl}}" alt="ansokningtitle">
+                    </a>
+                    <a href="#" class="kk_aj_arr_item_minneslista ansokningstatus" title="Lägg till i minneslistan" rel="ansokningid">
+                      <img src="assets/images/Add-New-32.png" alt="Lägg till i minneslistan" title="Lägg till i minneslistan"></a>
+                  </div>
+                </div>
+
+              </div>
+              <div class="small-12 medium-8 columns ">
+                <div class="row">
+                  <div class="kk_aj_arr_item_contentblock small-10 columns">
+                    <a (click)="gotodetail(item.ansokningid)">
+                      <h2 class="kk_aj_title">{{item.ansokningtitle}}</h2>
+                      <h3>{{item.ansokningsubtitle}}</h3>
+                    </a>
+                  </div>
+                  <div class="kk_aj_arr_item_buttonblock small-2 columns">
+                    <a (click)="gotodetail(item.ansokningid)"  rel="ansokningid">
+                      <img src="assets/images/iconrightarrow.png" class="readmorebutton" alt="Läs mer" title="Läs mer"/>
+                    </a>
+                  </div>
+                </div>
+                <div class="row kk_aj_arr_item_utovareblock">
+                  <div class="kk_aj_arr_item_Utovare small-7 medium-8 columns" rel="ansokningUtovarid"><h3>{{item.ansokningutovare}}</h3></div>
+                  <div class="kk_aj_arr_item_age small-5 medium-4 columns age"><h3>ÅLDER {{item.ansokningAgespan}}ÅR</h3></div>
+                </div>
+                <div  class="kk_aj_filtervalues S_BB_pansokningFilterfakta.Bokningsbar S_ML_ansokningFilterfakta.Morklaggning S_TH_ansokningFilterfakta.Takhojd S_ST">30 min</div><div class="S_KO">1000kr</div>
+              </div>
+
+          </div>
+          <!-- Item STOPP -->
+
+          <div class="small-12 columns" *ngIf="!resultatantal || resultatantal<=0" >
+
+            <div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status">
+             <span class="sr-only">Laddar...</span>
+           </div>
+
+         </div>
+
+        <!-- Mainlist STOPP   -->
+
+        <!-- START paginering nummer block -->
+        <div class="row kk_aj_productPagerblock" *ngIf="showNoPostToShow || filterMetadata.count >0 ">
+            <div class="small-12 ">
+              <pagination-controls
+              previousLabel="Föregående"
+              nextLabel="Nästa"
+              screenReaderPaginationLabel="Pagination"
+              screenReaderPageLabel="Sida"
+              screenReaderCurrentLabel="Du är på sida"
+              (pageChange)="p = $event">
+            </pagination-controls>
+            </div>
+        </div>
+        <!-- STOP paginering nummer block -->
+        </div>
+        <div *ngIf="showNoPostToShow || (resultatantal && filterMetadata.count ==0 && !showNoPostToShow)" class="kk_aj_productlist"><h2>Tyvärr hittade vi inte det du sökte!</h2></div>
+    </div>
+  </div>
+</div>
+{{showNoPostToShow}} - {{resultatantal}} - {{filterMetadata.count}}

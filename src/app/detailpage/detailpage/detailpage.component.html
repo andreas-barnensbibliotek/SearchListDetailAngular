@@ -1,49 +1,327 @@
-<div class="container dantooine-container pt-4 pb-4">
-    <div class="row mx-n2">
 
-        <div class="col-md-3 col-sm-12">
-            <div class="dantooine-post-profile-list py-4 mb-4">
-                <div class="d-flex align-items-center ml-2 mb-2">
-                    <div class="d-flex align-items-center">
-                        <p class="btn btn-category-item-card btn-dantooine-tankar mb-0">
-                            <i class="icon-bb-tankar"></i>
-                        </p>        
-                        <p class="ml-2 mb-0" style="font-size:18px;">Boktitel 1</p> 
-                    </div>  
-                </div>
+<!-- CONTENTPANE START ################################################################################################ -->
 
-                <div class="d-flex align-items-center ml-2 mb-2">
-                    <div class="d-flex align-items-center">
-                        <p class="btn btn-category-item-card btn-dantooine-djur mb-0">
-                            <i class="icon-bb-djur"></i>
-                        </p>        
-                        <p class="ml-2 mb-0" style="font-size:18px;">Boktitel 2</p> 
-                    </div>  
-                </div>
-                    
+      <div class="searchMainWrapper search-opener" style="display:none;">
+          <div class="small-12 columns">
+              <div class="row">
+                  <div class="small-12 columns">
+                      <div class="searchmainContent">
+                          <label for="searchinputbox">S&ouml;k p&aring; kulturivast.se</label>
+                          <input type="text" id="searchinputbox" class="searchinputbox" placeholder="S&ouml;k p&aring; kulturivast.se" />
+                          <button type="button" class="searchButton">
+                              <img src="http://kulturivast.se/sites/all/themes/kivnew/images/PilVanster28.png" alt="Sök" /></button>
+                      </div>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+
+       <!-- Navigerings breadcrumb START -->
+      <div class="small-12 columns">
+          <div class="row">
+              <div class="menybreadcrumb">
+                  <a href="www.kulturkivast.se/kulturkatalogen">START</a> |
+              </div>
+          </div>
+      </div>
+      <!-- Navigerings breadcrumb END -->
+
+      <br>
+      <div class="small-12 columns contentboxheight artikelSuperBlock">
+          <!-- ################################################################################################ -->
+
+             <!-- Content Wrapper. Contains page content -->
+         <div class="row">
+             <div id="MainMenuPane" class="MainMenuPane content-wrapper" runat="server">
+                 <div class="loader">
+                      <img src="http://kulturivast.se/sites/all/themes/kivnew/images/page-loader.gif" />
+                  </div>
+             </div>
+           </div>
+             <!-- /.content-wrapper -->
+              <!-- Artikel START -->
+             <div class="artikelwrapper level1">
+                 <div class="row">
+                     <div class="small-12 columns">
+                         <div id="MainRubrikPane" class="MainRubrikPane content-wrapper" runat="server">
+                             <div class="loader">
+                                  <img src="http://kulturivast.se/sites/all/themes/kivnew/images/page-loader.gif" />
+                              </div>
+                         </div>
+                     </div>
+                 </div>
+               <div class="row">
+                 <div class="medium-8 columns artmaincontent">
+                 <!--Maincontent -->
+                         <div id="ContentPane" class="contentPane content-wrapper" runat="server">
+                          <h3>{{detailpage.Title}}</h3>
+                          <div [innerHTML]="detailpage.Story"></div>
+                          <button type="button" class="btn btn-dantooine-green" (click)="gotodetail(1)"><fa-icon [icon]="ico_fa_chevron"></fa-icon> Tillbaka</button>
+
+                             <div class="loader">
+                                  <img src="http://kulturivast.se/sites/all/themes/kivnew/images/page-loader.gif" />
+                              </div>
+                         </div>
+                 </div>
+                 <div class="medium-4 columns">
+                   <div class="FaktaMainblock Fakta_mainblock">
+                     <!--Faktablock -->
+                              <div id="FaktaPane" class="faktaPane content-wrapper" runat="server">
+                                 <div class="loader">
+                                      <img src="http://kulturivast.se/sites/all/themes/kivnew/images/page-loader.gif" />
+                                  </div>
+                             </div>
+                   </div>
+                   <div class="artsidecontainer Kontakt_mainblock">
+                     <!--Kontaktblock -->
+                             <div id="KontaktPane" class="KontaktPane content-wrapper" runat="server">
+                                 <div class="loader">
+                                      <img src="http://kulturivast.se/sites/all/themes/kivnew/images/page-loader.gif" />
+                                  </div>
+                             </div>
+                   </div>
+                   <div class="artsidecontainer Dela_mainblock">
+                     <!--Delablock -->
+                             <div id="DelaPan" class="DelaPane content-wrapper" runat="server">
+                                 <div class="loader">
+                                      <img src="http://kulturivast.se/sites/all/themes/kivnew/images/page-loader.gif" />
+                                  </div>
+                             </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+             <!-- ARtikel END -->
+             <!-- ################################################################################################ -->
+
+          <a href="#" id="myBtn" title="Go to top">
+             <i class="fa fa-arrow-up"></i>
+          </a>
+
+      </div>
+      <a href="#0" class="scroll-top"><i class="fi-arrow-up"></i></a>
+
+      <!-- END INNER WRAP -->
+
+
+      <div id="dnn_ctr511_ContentPane"><!-- Start_Module_511 --><div id="dnn_ctr511_ModuleContent" class="DNNModuleContent ModDnnmodulekkajPublikdetailC">
+
+        <div class="row detailblock">
+            <div class="small-12 columns">
+
+                <!-- Artikel START -->
+                        <div class="artikelwrapper level1">
+                            <div class="row">
+
+                                <div class="medium-8 columns artmaincontent">
+
+                       <div class="granska_rubrik_border">
+                        <h1 class="granska_rubrik">Vart tog min igloo vägen?</h1>
+                        <h2 class="granska_Utovare_Organisation">Boulevardteatern</h2>
+                       </div>
+
+                                    <div class="field field-name-field-artikelbild field-type-image field-label-hidden field-wrapper">
+                                        <img class="granska_pressentationsbild" src="https://www.kulturkatalogenvast.org/Portals/0/kulturkatalogenArrImages/3447_1993_20190814_0435.gif" alt="Ett magiskt arktiskt äventyr om klimatförändringen punkt">
+
+                                        <div class="row">
+                                            <div class="medium-12 columns arrmainfoto"><span>Foto: </span> Martin Skoog</div>
+                                        </div>
+                                    </div>
+                                    <h2 class="granska_underrubrik">Ett magiskt arktiskt äventyr</h2>
+                                    <div class="body field">
+                                        <div class="granska_innehall"><p>Oolik är en helt vanlig flicka som ger sig ut på ett ovanligt äventyr. En dag när hon sitter i sin igloo börjar det droppa på hennes huvud. Håller hennes igloo på att smälta?<br>Följ med Oolik på hennes resa för att söka efter hjälp. På vägen, i en gnistrande stjärnklart arktiskt kall värld, möter hon flockar av snögäss, slädhundsvalpar, valrossar och DIG! I en interaktiv, musikalisk föreställning reser Oolik genom snöstormar, över oceaner och in i våra hjärtan.<br>Föreställningen är mycket visuell och karaktärerna pratar ”igloo-iska”, ett låtsasspråk, vilket gör att föreställningen är tillgänglig för alla. Både hörande och icke-hörande samt även de som har stora utmaningar i det verbala kommunicerandet. Föreställningen äger rum med publiken runtom sittandes i en igloo av tyg.<br>Pedagogiskt handledarmaterial finns tillgängligt. En föreställning om klimatförändringar. Att tänka på och tala om - och vad vi kan göra åt det.</p></div>
+                                    </div>
+
+                                   <div class="arrexempelblock granska_exempel" style="display: none;">
+                                       <h3 class="arrExempellistHeader">Exempel</h3>
+                                       <hr class="linje">
+
+                                        <ul class="arrExempellist"><!-- item loop START -->
+
+        <!-- item loop STOP --></ul>
+                                   </div>
+
+                                </div>
+                                <div class="medium-4 columns">
+                                    <div class="granskaFaktaMainblock">
+        <!-- item loop START -->
+        <div class="artsidecontainer granska_Fakta_mainblock">
+                 <h3>Fakta</h3>
+        <div class="row"><div class="small-12 medium-6 columns faktalabel">Antal medverkande</div><div class="small-12 medium-6 columns">2</div></div><div class="row"><div class="small-12 medium-6 columns faktalabel">Arrangemangstyp</div><div class="small-12 medium-6 columns">Föreställning på turné</div></div><div class="row"><div class="small-12 medium-6 columns faktalabel">Arrangörsstöd </div><div class="small-12 medium-6 columns">Arrangören betalar 50%</div></div><div class="row"><div class="small-12 medium-6 columns faktalabel">Bokningsbar tom</div><div class="small-12 medium-6 columns">2022-05-31</div></div><div class="row"><div class="small-12 medium-6 columns faktalabel">Konstform</div><div class="small-12 medium-6 columns">Teater</div></div><div class="row"><div class="small-12 medium-6 columns faktalabel">Lärarhandledning</div><div class="small-12 medium-6 columns"><a href="https://www.boulevardteatern.se/skapande-skola/barn/skapande-skola-vart-tog-min-igloo-v%C3%A4gen--42273320" title="Handledning finns!" target="_blank">Handledning finns</a></div></div><div class="row"><div class="small-12 medium-6 columns faktalabel">Medverkande </div><div class="small-12 medium-6 columns">Isabelle Ström och Josefin Karlsson</div></div><div class="row"><div class="small-12 medium-6 columns faktalabel">Premiärdatum</div><div class="small-12 medium-6 columns">2019-10-13</div></div><div class="row"><div class="small-12 medium-6 columns faktalabel">Speltid</div><div class="small-12 medium-6 columns">50 min</div></div></div>
+        <!-- item loop STOP -->
+
+        <!-- item loop START -->
+        <div class="artsidecontainer granska_Publik_mainblock">
+          <h3>Publik</h3>
+        <div class="row"><div class="small-12 medium-6 columns faktalabel">Föreställningar/dag </div><div class="small-12 medium-6 columns">2</div></div><div class="row"><div class="small-12 medium-6 columns faktalabel">Max publik</div><div class="small-12 medium-6 columns">65</div></div><div class="row"><div class="small-12 medium-6 columns faktalabel">Ålder från</div><div class="small-12 medium-6 columns">5 år</div></div><div class="row"><div class="small-12 medium-6 columns faktalabel">Ålder till</div><div class="small-12 medium-6 columns">10 år</div></div></div>
+        <!-- item loop STOP -->
+
+        <!-- item loop START -->
+        <div class="artsidecontainer granska_lokal_mainblock">
+          <h3>Lokal</h3>
+        <div class="row"><div class="small-12 medium-6 columns faktalabel">Byggtid </div><div class="small-12 medium-6 columns">150 min</div></div><div class="row"><div class="small-12 medium-6 columns faktalabel">Bärhjälp behövs</div><div class="small-12 medium-6 columns">Ja (minst 1 person)</div></div><div class="row"><div class="small-12 medium-6 columns faktalabel">El </div><div class="small-12 medium-6 columns">16 A</div></div><div class="row"><div class="small-12 medium-6 columns faktalabel">Ljud</div><div class="small-12 medium-6 columns">Tar med eget/Ingår</div></div><div class="row"><div class="small-12 medium-6 columns faktalabel">Ljus </div><div class="small-12 medium-6 columns">Tar med eget/Ingår</div></div><div class="row"><div class="small-12 medium-6 columns faktalabel">Mörkläggning krävs</div><div class="small-12 medium-6 columns">Ja helst</div></div><div class="row"><div class="small-12 medium-6 columns faktalabel">Rivtid </div><div class="small-12 medium-6 columns">90 min</div></div><div class="row"><div class="small-12 medium-6 columns faktalabel">Scen bredd</div><div class="small-12 medium-6 columns">9</div></div><div class="row"><div class="small-12 medium-6 columns faktalabel">Scen djup</div><div class="small-12 medium-6 columns">10</div></div><div class="row"><div class="small-12 medium-6 columns faktalabel">Scen takhöjd</div><div class="small-12 medium-6 columns">3</div></div></div>
+        <!-- item loop STOP -->
+
+        <!-- item loop START -->
+        <div class="artsidecontainer granska_Ekonomi_mainblock">
+          <h3>Kostnad/Pris</h3>
+        <div class="row"><div class="small-12 medium-6 columns faktalabel">Kostnad/Pris</div><div class="small-12 medium-6 columns">10500 kr</div></div><div class="row"><div class="small-12 medium-6 columns faktalabel">Logi</div><div class="small-12 medium-6 columns">Tillkommer</div></div><div class="row"><div class="small-12 medium-6 columns faktalabel">Resor</div><div class="small-12 medium-6 columns">Tillkommer</div></div><div class="row"><div class="small-12 medium-6 columns faktalabel">Traktamente</div><div class="small-12 medium-6 columns">Tillkommer</div></div></div>
+        <!-- item loop STOP -->
+
+        <!-- item loop START -->
+        <!-- item loop STOP --> </div>
+                                    <div class="artsidecontainer granska_Kontakt_mainblock">
+                                        <h3>Kontakt</h3>
+                                        <div class="row granska_Utovare_Organisation_block">
+                                            <div class="small-12 medium-6 columns faktalabel">
+                                                Aktör/Utövare/Grupp
+                                            </div>
+                                            <div class="small-12 medium-6 columns">
+                                                <span class="granska_Utovare_Organisation">Boulevardteatern</span>
+                                            </div>
+                                        </div>
+                                        <div class="row granska_Utovare_namn_block">
+                                            <div class="small-12 medium-6 columns faktalabel">
+                                                Kontaktperson
+                                            </div>
+                                            <div class="small-12 medium-6 columns">
+                                                <span class="granska_Utovare_namn">Yvonne Granath</span>
+                                            </div>
+                                        </div>
+                                        <div class="row granska_Utovare_Adress_block">
+                                            <div class="small-12 medium-6 columns faktalabel">
+                                                Adress
+                                            </div>
+                                            <div class="small-12 medium-6 columns">
+                                                <span class="granska_Utovare_Adress">Boulevardteatern Skånegatan 63</span>
+                                            </div>
+                                        </div>
+                                            <div class="row granska_Utovare_postort_block">
+                                            <div class="small-12 medium-6 columns faktalabel">
+                                                Postort
+                                            </div>
+                                            <div class="small-12 medium-6 columns">
+                                                <span class="granska_Utovare_postort">11637 Stockholm</span>
+                                            </div>
+                                        </div>
+                                        <div class="row granska_Utovare_tfn_block">
+                                            <div class="small-12 medium-6 columns faktalabel">
+                                                Telefon
+                                            </div>
+                                            <div class="small-12 medium-6 columns">
+                                                <span class="granska_Utovare_tfn">0737-598964</span>
+                                            </div>
+                                        </div>
+                                        <div class="row granska_Utovare_epost_block">
+                                            <div class="small-12 medium-12 columns faktalabel">
+                                                E-post
+                                            </div>
+                                            <div class="small-12 medium-12 columns">
+                                                <span class="granska_Utovare_epost right"><a href="mailto:yvonne@boulevardteatern.se">yvonne@boulevardteatern.se</a></span>
+                                            </div>
+                                        </div>
+                                        <div class="row granska_Utovare_hemsida_block">
+                                            <div class="small-12 medium-12 columns faktalabel ">
+                                               Hemsida
+                                            </div>
+                                            <div class="small-12 medium-12 columns">
+                                                <span class="granska_Utovare_hemsida right"><a href="http://www.boulevardteatern.se" target="_blank">www.boulevardteatern.se</a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="artsidecontainer granska_Dela">
+                                        <h3>Dela</h3>
+                                            <div id="share-buttons">
+
+                                                <!-- Buffer
+                                                <a href="https://bufferapp.com/add?url=https://simplesharebuttons.com&amp;text=Simple Share Buttons" target="_blank">
+                                                    <img src="https://simplesharebuttons.com/images/somacro/buffer.png" alt="Buffer" />
+                                                </a>-->
+
+                                                <!-- Digg
+                                                <a href="http://www.digg.com/submit?url=https://simplesharebuttons.com" target="_blank">
+                                                    <img src="https://simplesharebuttons.com/images/somacro/diggit.png" alt="Digg" />
+                                                </a> -->
+
+                                                 <!-- Email -->
+                                                <a id="shareMail" href="mailto:?Subject=Delat%20fr%C3%A5n%20Kulturkatalogen%20V%C3%A4st%20-%20Vart tog min igloo vägen?&amp;body=Jag%20vill%20dela%20arrangemanget:%20%22Vart tog min igloo vägen?%20fr%C3%A5n%20Kulturkatalogen%20V%C3%A4st%20 https://www.kulturkatalogenvast.org/Kulturkatalogen/ArrangemangDetail/id/3447">
+                                                    <img src="https://simplesharebuttons.com/images/somacro/email.png" alt="Email">
+                                                </a>
+
+
+                                                <!-- Facebook
+                                                <a id="shareFacebook" href="#" target="_blank">
+                                                    <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+                                                </a> -->
+
+                                                <!-- Google+
+                                                <a href="https://plus.google.com/share?url=https://simplesharebuttons.com" target="_blank">
+                                                    <img src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
+                                                </a>-->
+
+                                                <!-- LinkedIn
+                                                <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://simplesharebuttons.com" target="_blank">
+                                                    <img src="https://simplesharebuttons.com/images/somacro/linkedin.png" alt="LinkedIn" />
+                                                </a>-->
+
+                                                <!-- Pinterest
+                                                <a href="javascript:void((function()%7Bvar%20e=document.createElement('script');e.setAttribute('type','text/javascript');e.setAttribute('charset','UTF-8');e.setAttribute('src','http://assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)%7D)());">
+                                                    <img src="https://simplesharebuttons.com/images/somacro/pinterest.png" alt="Pinterest" />
+                                                </a>-->
+
+                                                <!-- Print -->
+                                                <a href="javascript:;" onclick="window.print()">
+                                                    <img src="https://simplesharebuttons.com/images/somacro/print.png" alt="Print">
+                                                </a>
+
+                                                <!-- Reddit
+                                                <a href="http://reddit.com/submit?url=https://simplesharebuttons.com&amp;title=Simple Share Buttons" target="_blank">
+                                                    <img src="https://simplesharebuttons.com/images/somacro/reddit.png" alt="Reddit" />
+                                                </a>-->
+
+                                                <!-- StumbleUpon
+                                                <a href="http://www.stumbleupon.com/submit?url=https://simplesharebuttons.com&amp;title=Simple Share Buttons" target="_blank">
+                                                    <img src="https://simplesharebuttons.com/images/somacro/stumbleupon.png" alt="StumbleUpon" />
+                                                </a>-->
+
+                                                <!-- Tumblr
+                                                <a href="http://www.tumblr.com/share/link?url=https://simplesharebuttons.com&amp;title=Simple Share Buttons" target="_blank">
+                                                    <img src="https://simplesharebuttons.com/images/somacro/tumblr.png" alt="Tumblr" />
+                                                </a>-->
+
+                                                <!-- Twitter
+                                                <a href="https://twitter.com/share?url=https://simplesharebuttons.com&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons" target="_blank">
+                                                    <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+                                                </a>-->
+
+                                                <!-- VK
+                                                <a href="http://vkontakte.ru/share.php?url=https://simplesharebuttons.com" target="_blank">
+                                                    <img src="https://simplesharebuttons.com/images/somacro/vk.png" alt="VK" />
+                                                </a> -->
+
+                                                <!-- Yummly
+                                                <a href="http://www.yummly.com/urb/verify?url=https://simplesharebuttons.com&amp;title=Simple Share Buttons" target="_blank">
+                                                    <img src="https://simplesharebuttons.com/images/somacro/yummly.png" alt="Yummly" />
+                                                </a>-->
+
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ARtikel END -->
+
+
             </div>
-            <div class="dantooine-post-profile py-4 mb-4 text-center">
-                <img src="/assets/images/bok2.jpg" class="img-fluid" style="max-width:100px"> 
-                <p class="mt-4"><strong>Alice</strong></p>
-            </div>
-
-            <button type="button" class="btn btn-dantooine-green" (click)="gotodetail(1)"><fa-icon [icon]="ico_fa_chevron"></fa-icon> Tillbaka</button>
-
         </div>
 
-        <div class="col-md-9 col-sm-12">
-            <div class="p-4 dantooine-post-text">
-                <h3>{{detailpage.Title}}</h3>
-                <div [innerHTML]="detailpage.Story"></div>
-            </div>
-            <div class="dantooine-post-footer d-flex bd-highlight mb-3">
-                <div class="p-2 bd-highlight"><fa-icon [icon]="ico_fa_print"></fa-icon></div>
-                <div class="ml-auto p-2 bd-highlight"><a href="" (click)="like()"><fa-icon [icon]="ico_fa_tumbsup"></fa-icon></a> {{likes}}</div>
-            </div>
-            
+
+
+        <div id="kk_aj_conf" style="">
+            <span id="dnn_ctr511_View_kk_aj_CurrentArrid" class="kk_aj_CurrentArrid">0</span>
+            <span id="dnn_ctr511_View_kk_aj_CurrentPageType" class="kk_aj_CurrentPageType">Dnn_module_kk_aj_Publik_detail</span>
+             <span id="dnn_ctr511_View_kk_aj_CurrentTabid" class="kk_aj_CurrentPageName">Arrangemang</span>
         </div>
+        </div><!-- End_Module_511 --></div>
 
-        
-    </div>
-
-</div>
