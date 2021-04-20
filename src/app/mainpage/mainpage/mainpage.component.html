@@ -261,7 +261,7 @@ id= {{debug}}
                 screenReaderPaginationLabel="Pagination"
                 screenReaderPageLabel="Sida"
                 screenReaderCurrentLabel="Du är på sida"
-                (pageChange)="p = $event">
+                (pageChange)="p =  $event">
               </pagination-controls>
             </div>
           </div>
@@ -276,7 +276,7 @@ id= {{debug}}
               <div class="small-12 medium-4 columns kk_aj_arr_item_thumbnail">
                 <div class=" kk_aj_arr_item_thumbnail_color">
                   <div class="small-12 bildtestbox">
-                    <a id="goto{{item.ansokningid}}" (click)="gotodetail(item.ansokningid)" class="kk_aj_arr_item_thumbnail_img">
+                    <a (click)="gotodetail(item.SkrivID)" id="goto{{item.ansokningid}}" class="kk_aj_arr_item_thumbnail_img">
                       <img src="https://www.kulturkatalogenvast.org/Portals/0/kulturkatalogenArrImages/{{item.ansokningMediaImage.MediaUrl}}" alt="ansokningtitle">
                     </a>
                     <a href="#" class="kk_aj_arr_item_minneslista ansokningstatus" title="Lägg till i minneslistan" rel="ansokningid">
@@ -288,13 +288,13 @@ id= {{debug}}
               <div class="small-12 medium-8 columns ">
                 <div class="row">
                   <div class="kk_aj_arr_item_contentblock small-10 columns">
-                    <a (click)="gotodetail(item.ansokningid)">
+                    <a (click)="gotodetail(item.SkrivID)" >
                       <h2 class="kk_aj_title">{{item.ansokningtitle}}</h2>
                       <h3>{{item.ansokningsubtitle}}</h3>
                     </a>
                   </div>
                   <div class="kk_aj_arr_item_buttonblock small-2 columns">
-                    <a (click)="gotodetail(item.ansokningid)"  rel="ansokningid">
+                    <a (click)="gotodetail(item.SkrivID)"   rel="ansokningid">
                       <img src="assets/images/iconrightarrow.png" class="readmorebutton" alt="Läs mer" title="Läs mer"/>
                     </a>
                   </div>

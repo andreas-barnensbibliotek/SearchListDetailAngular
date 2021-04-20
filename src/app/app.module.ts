@@ -17,6 +17,7 @@ import { AutocompleteLibModule } from 'angular-ng-autocomplete';
 import { FormsModule } from '@angular/forms';
 import { CustomFilterPipe } from './core/pipes/custom-filter.pipe';
 import { PageCountPipe } from './core/pipes/page-count.pipe';
+import { KatalogenMainComponent } from './katalogen-main/katalogen-main.component';
 
 // import { AutocompleteLibModule } from 'angular-ng-autocomplete';
 
@@ -27,13 +28,14 @@ import { PageCountPipe } from './core/pipes/page-count.pipe';
     DetailpageComponent,
     CustomFilterPipe,
     PageCountPipe,
-    ScrollToTopComponent
+    ScrollToTopComponent,
+    KatalogenMainComponent
   ],
   imports: [
     BrowserModule,
     FontAwesomeModule,
     HttpClientModule,
-    // AppRoutingModule ,
+    AppRoutingModule ,
     NgxPaginationModule,
     NgxBootstrapSliderModule,
     AutocompleteLibModule,

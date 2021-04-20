@@ -1,3 +1,4 @@
+import { KatalogenMainComponent } from './katalogen-main/katalogen-main.component';
 import { MainpageComponent } from './mainpage/mainpage/mainpage.component';
 import { DetailpageComponent } from './detailpage/detailpage/detailpage.component';
 import { NgModule } from '@angular/core';
@@ -11,9 +12,9 @@ const routerOptions: ExtraOptions = {
 };
 const routes: Routes = [
 
-// { path: 'id/:id',component: DetailpageComponent },
-// { path: '', component: MainpageComponent },
-// { path: '**',  component: MainpageComponent},
+{ path: 'Arrangemang/id/:id',component: DetailpageComponent },
+{ path: '', component: KatalogenMainComponent },
+{ path: '**',  component: KatalogenMainComponent},
 ];
 
 

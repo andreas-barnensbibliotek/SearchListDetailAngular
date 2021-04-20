@@ -6,7 +6,7 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { faEllipsisV} from '@fortawesome/free-solid-svg-icons';
 import { IpostSearch } from 'src/app/core/interface/ipost-search';
 import { clsPostData } from 'src/app/core/models/clsPostData';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-mainpage',
@@ -34,9 +34,14 @@ export class MainpageComponent implements OnInit {
   filterterm:clsAdvFilter=new clsAdvFilter
   postdata:IpostSearch = new clsPostData;
 debug:any="test"
-  constructor(private wpApi:KatalogenApiService, private glb:Global, private location: LocationStrategy,private cd:ChangeDetectorRef, ) {
+  constructor(
+    private wpApi:KatalogenApiService,
+    private glb:Global,
+    private location: LocationStrategy,
+    private cd:ChangeDetectorRef,
+    private activatedRoute:ActivatedRoute,
+    private router:Router,) {
 
-console.log("href: " + window.location.href)
     this.showPageMax= glb.showPageMax;
     history.pushState(null, null, window.location.href);
     // check if back or forward button is pressed.
@@ -46,7 +51,7 @@ console.log("href: " + window.location.href)
   }
 
   ngOnInit(): void {
-    // this.debug= this.activatedRoute.snapshot.queryParams
+    this.debug= this.activatedRoute.snapshot.queryParams
     this.getpagedata();
     this.wpApi.currentPageDataHandler.subscribe(()=>{
       // handles global events
@@ -211,6 +216,13 @@ console.log("href: " + window.location.href)
 
   gotodetail(id:any){
     this.glb.currentAnsokningid= id;
-    this.glb.showDetailpage();
+    //this.router.navigateByUrl("/details/"+ id);
+    // this.pageChanged(6);
+     this.glb.showDetailpage();
+  }
+
+  pageChanged(e){
+    return e;
+
   }
 }

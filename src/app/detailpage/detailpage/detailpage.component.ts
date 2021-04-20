@@ -1,7 +1,8 @@
 import { Global } from '../../core/models/global';
 import { Component, OnInit } from '@angular/core';
 import { faChevronLeft, faPrint, faThumbsUp } from '@fortawesome/free-solid-svg-icons';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-detailpage',
@@ -16,11 +17,10 @@ export class DetailpageComponent implements OnInit {
 
   detailpage:any=[];
 
-  constructor(private glb:Global, ) {
-    // this.activatedRoute.queryParams.subscribe(data=>{
-    //   console.log("param: " + data);
-    // })
-    window.history.pushState("object or string", "Title", "/new-url");
+  constructor(private glb:Global, private activatedRoute:ActivatedRoute,private router:Router,private location: Location) {
+    this.activatedRoute.queryParams.subscribe(data=>{
+      console.log("param: " + data);
+    })
   }
 
   ngOnInit(): void {
@@ -35,9 +35,10 @@ export class DetailpageComponent implements OnInit {
   }
 
   gotodetail(id:any){
-
+    // this.location.back()
+    // if(url=="#") return false;
+    //  this.router.navigateByUrl(url);
     this.glb.showMainpage();
-    window.history.pushState("object or string", "Title", "/");
 
   }
 
