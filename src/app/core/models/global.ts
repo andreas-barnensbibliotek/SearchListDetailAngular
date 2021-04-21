@@ -23,7 +23,8 @@ export class Global {
     blnDetailpage:boolean= false;
     currentAnsokningid:any=0;
     currentCategoryName:any;
-
+    currentpage:number;
+  filterform:any;
     server:string = this._usedServer + this._cmdApi;
     devkey:string = "/alf/?type=json";
 

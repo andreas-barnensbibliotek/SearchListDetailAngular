@@ -33,7 +33,8 @@ export class MainpageComponent implements OnInit {
 
   filterterm:clsAdvFilter=new clsAdvFilter
   postdata:IpostSearch = new clsPostData;
-debug:any="test"
+  debug:any="test"
+
   constructor(
     private wpApi:KatalogenApiService,
     private glb:Global,
@@ -42,35 +43,51 @@ debug:any="test"
     private activatedRoute:ActivatedRoute,
     private router:Router,) {
 
-    this.showPageMax= glb.showPageMax;
-    history.pushState(null, null, window.location.href);
-    // check if back or forward button is pressed.
-    this.location.onPopState(() => {
-        history.pushState(null, null, window.location.href);
-    });
+      this.showPageMax= glb.showPageMax;
+      // history.pushState(null, null, window.location.href);
+      // // check if back or forward button is pressed.
+      // this.location.onPopState(() => {
+      //   history.pushState(null, null, window.location.href);
+      // });
   }
 
   ngOnInit(): void {
-    this.debug= this.activatedRoute.snapshot.queryParams
+    // this.debug= this.activatedRoute.snapshot.queryParams
     this.getpagedata();
-    this.wpApi.currentPageDataHandler.subscribe(()=>{
-      // handles global events
-    });
+    // this.wpApi.currentPageDataHandler.subscribe(()=>{
+    //   // handles global events
+    // });
     this.glb.mainJsonKatalogItemListHandler.subscribe(()=>{
       this.getpagedata();
     });
+
+    // kolla vilken sida i pagern som användes senast och om den inte var från start gå till rätt sida
+    if(this.glb.currentpage>=1){
+      this.pageChanged(this.glb.currentpage);
+    }
   }
 
   ngAfterViewChecked() {
     this.cd.detectChanges(); // använd för att inte får expressionchangedAfterItHasbeenCheckedError
+
+    // kolla om filter finns använd det isf
+    if (this.glb.filterform){
+      this.filterterm = this.glb.filterform
+    }
+
+    // tillbaka från detaljvyn scroll
+    if(this.glb.currentAnsokningid>0){
+      this.scroll('#goto'+ this.glb.currentAnsokningid);
+      this.glb.currentAnsokningid=0;
+    }
   }
 
   getpagedata(){
-    console.log("laddar ny data: ", this.glb.mainJsonKatalogItemList);
+    //console.log("laddar ny data: ", this.glb.mainJsonKatalogItemList);
     if(this.glb.isEmptyObj(this.glb.mainJsonKatalogItemList)){
       this.loadPageData(this.postdata);
     }else{
-      console.log("data finns: ", this.glb.mainJsonKatalogItemList.kk_aj_admin);
+      //console.log("data finns: ", this.glb.mainJsonKatalogItemList.kk_aj_admin);
 
       this.mainPageData = this.glb.mainJsonKatalogItemList.kk_aj_admin.ansokningarlista.ansokningar;
       this.resultatantal = this.mainPageData.length;
@@ -81,7 +98,7 @@ debug:any="test"
 
   loadPageData(srhdata:IpostSearch){
     this.resetsearch();
-    this.mainPageData=[];
+
     this.wpApi.getKatalogList(srhdata).subscribe(Response => {
       this.glb.mainJsonKatalogItemList = Response
       // this.resultatantal = this.glb.mainJsonKatalogItemList.kk_aj_admin.ansokningarlista.ansokningarcount;
@@ -104,8 +121,9 @@ debug:any="test"
   }
 
   noresult(){
+     this.showNoPostToShow= false;
     let antal:number = Number(this.glb.mainJsonKatalogItemList.kk_aj_admin.ansokningarlista.ansokningarcount)
-    this.showNoPostToShow= false;
+
     if(antal<=1){
       if(this.glb.mainJsonKatalogItemList.kk_aj_admin.ansokningarlista.ansokningar[0].ansokningtitle == "Finns inget att visa"){
         this.showNoPostToShow= true
@@ -114,11 +132,14 @@ debug:any="test"
   }
 
   resetsearch(){
-    this.resultatantal=0;
+    this.mainPageData=[];
     this.showNoPostToShow = false;
+    this.pageChanged(1)
+    this.glb.currentpage=0;
   }
 
   MainSearchFormClick(){
+    this.mainPageData=[];
     this.loadPageData(this.postdata);
     this.resetAdvsearchform();
     this.showNoPostToShow = false;
@@ -127,6 +148,7 @@ debug:any="test"
 
   formFreetextSearchClick(){
     if(this.currsearchstr){
+      this.mainPageData=[];
       this.postdata = new clsPostData
       this.postdata.searchstr = this.currsearchstr;
 
@@ -166,6 +188,10 @@ debug:any="test"
     this.filterterm.morklaggning="";
     this.filterterm.tid=0;
     return false;
+  }
+  setfilter(){
+    this.glb.filterform=  this.filterterm;
+    console.log("filter är: " + this.filterterm.kostnad);
   }
 
   autocompleteGetData(searchobj:IpostSearch){
@@ -221,8 +247,9 @@ debug:any="test"
      this.glb.showDetailpage();
   }
 
-  pageChanged(e){
-    return e;
-
+  pageChanged(event){
+    this.glb.currentpage = event;
+    this.p = event
+    console.log("pageChanged " + this.p)
   }
 }

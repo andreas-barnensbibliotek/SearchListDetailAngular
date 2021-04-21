@@ -13,8 +13,8 @@ const routerOptions: ExtraOptions = {
 const routes: Routes = [
 
 { path: 'Arrangemang/id/:id',component: DetailpageComponent },
-{ path: '', component: KatalogenMainComponent },
-{ path: '**',  component: KatalogenMainComponent},
+{ path: '', component: MainpageComponent },
+{ path: '**',  component: MainpageComponent},
 ];
 
 
