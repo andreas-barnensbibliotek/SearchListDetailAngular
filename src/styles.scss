@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Baloo|Hind+Siliguri|Questrial|Roboto');
-@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cardo&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Baloo|Hind+Siliguri|Questrial|Roboto');
+// @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Chewy&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Cardo&display=swap');
 
 
 
-@import url(assets/css/bb-font.css); /* Barnens bibliotek eget font */
-@import url(https://www.kulturkatalogenvast.org/Portals/_default/skins/kk_aj_publik_bespin/public/css/kk_aj_PublicBespinCSS_v1.0.0.css);
+// @import url(assets/css/bb-font.css); /* Barnens bibliotek eget font */
+  @import url(https://www.kulturkatalogenvast.org/Portals/_default/skins/kk_aj_publik_bespin/public/css/kk_aj_PublicBespinCSS_v1.0.0.css);
 
 .dantooine-container{
     background-color: #fff;
@@ -50,7 +50,6 @@ ng-autocomplete .autocomplete-container .input-container input{
     background-color:#a5daf0;
     @extend .setdefheight;
 }
-
 
 
 .dantooine-post-cover-bg-lila{ background-color:#847db4;  @extend .setdefheight;}
@@ -134,11 +133,22 @@ text-decoration: none;
 }
 
 ngx-pagination li .disabled{
-
-
   color: #ccc !important;
 }
 
 .buttonmall, .kk_aj_mainFreetextSearchblock #kk_aj_btnfreetextSearch.tiny, .kk_aj_searchbuttonblock button.tiny, .kk_aj_bg_beige .kk_aj_kontaktmbutton, .kk_aj_mainFreetextSearchblock #kk_aj_btnfreetextSearch.tiny, .kk_aj_searchbuttonblock button.tiny, .kk_aj_kontaktmbutton, .kk_aj_visaminneslistan, .kk_aj_searchRensaformbutton, .kk_aj_bg_beige .kk_aj_kontaktmbutton {
   height: 36px !important;
 }
+
+.detailblock .artikelwrapper .artsidecontainer {
+  font-size: .90rem;
+}
+.artikelwrapper .artsidecontainer .faktalabel {
+  font-size: .85rem;
+}
+.detailblock .artikelwrapper {
+  margin-top: 0px;
+}
+.kk_aj_arr_item_minneslista{display: none;}
+#kk_aj_cmd_minneslistan{display: none;}
+

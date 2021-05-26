@@ -1,3 +1,4 @@
+import { KatalogenApiService } from './../../core/services/katalogenApi/katalogen-api.service';
 import { Global } from '../../core/models/global';
 import { Component, OnInit } from '@angular/core';
 import { faChevronLeft, faPrint, faThumbsUp } from '@fortawesome/free-solid-svg-icons';
@@ -16,9 +17,10 @@ export class DetailpageComponent implements OnInit {
   ico_fa_chevron= faChevronLeft;
   likes:number= 0;
 
+  pagejson:any=[];
   detailpage:any=[];
   currpageSlug:any;
-  constructor(private glb:Global, private activatedRoute:ActivatedRoute,private router:Router,private location: Location) {
+  constructor(private wpApi:KatalogenApiService, private glb:Global, private activatedRoute:ActivatedRoute,private router:Router,private location: Location) {
 
   }
 
@@ -26,24 +28,36 @@ export class DetailpageComponent implements OnInit {
 
     this.activatedRoute.paramMap.subscribe(prams =>{
       this.glb.currentAnsokningid = prams.get('id');
+      if(this.glb.currentAnsokningid){
+        this.loadPageData(this.glb.currentAnsokningid);
+      }
     });
-
     // this.detailpage= this.glb.getTextBySkrivid(this.glb.currentAnsokningid);
-
-    console.log("filter är: " + this.glb.filterform.kostnad);
     // console.log(this.detailpage);
-
   }
 
   ngAfterViewChecked() {
     window.scrollTo(0, 0);
-
   }
 
-  gotodetail(id:any){
-    this.location.back()
-    // if(url=="#") return false;
-    //  this.router.navigateByUrl(url);
+  loadPageData(arrid:string){
+
+    this.wpApi.getByArrId(arrid).subscribe(Response => {
+
+      this.pagejson = Response;
+      this.detailpage = this.pagejson.kk_aj_admin.ansokningarlista.ansokningar;
+    })
+  }
+
+
+
+  gotodetail(url){
+
+    console.log("funkar detta: " +this.location);
+    //  this.location.back()
+    this.glb.blnMainpage= true;
+    if(url=="#") return false;
+    this.router.navigateByUrl(url);
 
   }
 

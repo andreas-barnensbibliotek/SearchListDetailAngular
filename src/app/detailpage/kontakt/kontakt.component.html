@@ -1,0 +1,62 @@
+<div *ngIf="Kontaktblock" class="artsidecontainer granska_Kontakt_mainblock">
+  <h3>Kontakt</h3>
+  <div class="row granska_Utovare_Organisation_block">
+    <div class="small-12 medium-6 columns faktalabel">
+      Aktör/Utövare/Grupp
+    </div>
+    <div class="small-12 medium-6 columns">
+      <span class="granska_Utovare_Organisation">
+        {{Kontaktblock.Organisation}}
+      </span>
+    </div>
+  </div>
+  <div class="row granska_Utovare_namn_block">
+    <div class="small-12 medium-6 columns faktalabel">
+      Kontaktperson
+    </div>
+    <div class="small-12 medium-6 columns">
+      <span class="granska_Utovare_namn">{{Kontaktblock.Fornamn}} {{Kontaktblock.Efternamn}}</span>
+    </div>
+  </div>
+  <div class="row granska_Utovare_Adress_block">
+    <div class="small-12 medium-6 columns faktalabel">Adress</div>
+    <div class="small-12 medium-6 columns">
+      <span class="granska_Utovare_Adress">{{Kontaktblock.Adress}}</span>
+    </div>
+  </div>
+  <div class="row granska_Utovare_postort_block">
+    <div class="small-12 medium-6 columns faktalabel">
+      Postort
+    </div>
+    <div class="small-12 medium-6 columns">
+      <span class="granska_Utovare_postort">{{Kontaktblock.Postnr}} {{Kontaktblock.Ort}}</span>
+    </div>
+  </div>
+  <div class="row granska_Utovare_tfn_block">
+    <div class="small-12 medium-6 columns faktalabel">
+      Telefon
+    </div>
+    <div class="small-12 medium-6 columns">
+      <span class="granska_Utovare_tfn">{{Kontaktblock.Telefon}}</span>
+    </div>
+  </div>
+  <div class="row granska_Utovare_epost_block">
+    <div class="small-12 medium-12 columns faktalabel">
+      E-post
+    </div>
+    <div class="small-12 medium-12 columns">
+      <span class="granska_Utovare_epost right">
+        <a href="mailto:{{Kontaktblock.Epost}}">{{Kontaktblock.Epost}}</a></span>
+    </div>
+  </div>
+  <div class="row granska_Utovare_hemsida_block">
+    <div class="small-12 medium-12 columns faktalabel">
+      Hemsida
+    </div>
+    <div class="small-12 medium-12 columns">
+      <span class="granska_Utovare_hemsida right">
+        <a href="https://{{Kontaktblock.Weburl}}" target="_blank">{{Kontaktblock.Weburl}}</a>
+      </span>
+    </div>
+  </div>
+</div>

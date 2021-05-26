@@ -1,5 +1,5 @@
-import { AppError } from './appErrors';
+// import { AppError } from './appErrors';
 
-export class NotFoundError extends AppError{    
-    return = "Hittade inte, Not Found ERROR (404)"
-}
+// export class NotFoundError extends AppError{
+//     return = "Hittade inte, Not Found ERROR (404)"
+// }

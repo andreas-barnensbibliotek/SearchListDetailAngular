@@ -1,6 +1,3 @@
-
-id= {{debug}}
-
 <!-- Main search -->
 <div class="small-12 columns kk_aj_superProductListBlock">
     <div class="row kk_aj_mainLogoheaderblock">
@@ -23,21 +20,6 @@ id= {{debug}}
     </div>
 </div>
 
-<div id="kk_aj_maincovid19block" class="small-12 columns kk_aj_mainsearchblock">
-    <div class="row ">
-        <div class="small-12 columns ">
-            <h2>Kulturarrangemang</h2>
-            <h3>Covid 19-anpassade: streaming, livestreaming och/eller att utföras utomhus</h3>
-            <div class="row collapse ">
-                <div class="small-12 columns text-center">
-                    <a href="/Kulturkatalogen-Väst-Sök-i-kulturkatalog/covid19"  name="kk_aj_btnfreetextSearch" class="button tiny round text-center" tabindex="0"
-                    style=" margin-top: 2rem; margin-bottom: 4rem; font-size: 0.9rem; color:#fff;">Gå TILL LISTA MED ARRANGEMANG</a>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</div>
 
 <div id="kk_aj_mainFreetextSearchblock" class="small-12 columns kk_aj_mainFreetextSearchblock">
     <div class="row ">
@@ -153,11 +135,8 @@ id= {{debug}}
    <div class="row ">
 
     <div id="AnchorSearchlist" class="small-12 large-8 large-offset-4 hittaarrHeader columns " >
-
-      <h2>Hittade arrangemang (<span *ngIf="!resultatantal || resultatantal<=0" class="spinner-border spinner-border-lg" role="status"><span class="sr-only">Laddar...</span></span><span *ngIf="!showNoPostToShow && filterMetadata.count>0">{{filterMetadata?.count}}</span><span *ngIf="showNoPostToShow || (filterMetadata.count ==0 && !hideSpinner(filterMetadata.count))">0</span>)</h2>
-
+      <h2>Hittade arrangemang (<span *ngIf="ShowSpinner" class="spinner-border spinner-border-lg" role="status"> <img src="Portals/_default/Skins/kk_aj_Publik_Bespin/public/ajax-loader.gif" /></span><span *ngIf="!ShowSpinner">{{filterMetadata?.count}}</span>)</h2>
      </div>
-
 <!--Produktlista och filter -->
 <div id="kk_aj_mainproductlistblock" class="small-12 kk_aj_mainproductlistblock ">
 
@@ -168,7 +147,7 @@ id= {{debug}}
     <div class="small-12 large-3 columns kk_aj_filterblock jplist-panel">
         <h3>Förfina sökningen</h3>
 
-        <div class="row">
+        <!-- <div class="row">
             <div class="small-12 columns ">
                 <label for="Bokningsbarfilter" style="display:none;">Bokningsbar t.o.m.</label>
                 <select id="Bokningsbarfilter" name="Bokningsbarfilter"
@@ -180,7 +159,7 @@ id= {{debug}}
                     <option value="4">Okt-Dec</option>
                 </select>
             </div>
-        </div>
+        </div> -->
 
         <div class="row">
             <div class="small-12 columns spellangdblock">
@@ -249,9 +228,9 @@ id= {{debug}}
             </select>
           </div>
           <div class=" small-12 medium-9 columns">
-              <a id="kk_aj_cmd_minneslistan" class="button tiny left round kk_aj_visaminneslistan kk_aj_cmd_minneslistan right ">
+              <!-- <a id="kk_aj_cmd_minneslistan" class="button tiny left round kk_aj_visaminneslistan kk_aj_cmd_minneslistan right ">
                   <img src="https://www.kulturkatalogenvast.org/Portals/_default/Skins/kk_aj_Publik_Bespin/public/images/Add-New-32.png" alt="Visa minneslistan" title="Visa minneslistan"/>Visa minneslistan <span class="cmd_minneslistan"></span>
-              </a>
+              </a> -->
           </div>
           <div class="row" >
             <div class="medium-12 columns">
@@ -277,10 +256,11 @@ id= {{debug}}
                 <div class=" kk_aj_arr_item_thumbnail_color">
                   <div class="small-12 bildtestbox">
                     <a [routerLink]="['/Arrangemang/id/', item.ansokningid]" id="goto{{item.ansokningid}}" (click)="setfilter()" class="kk_aj_arr_item_thumbnail_img">
-                      <img src="https://www.kulturkatalogenvast.org/Portals/0/kulturkatalogenArrImages/{{item.ansokningMediaImage.MediaUrl}}" alt="ansokningtitle">
+                      <img src="https://kulturkatalogenvast.org/Portals/0/kulturkatalogenArrImages/{{item.ansokningMediaImage.MediaUrl}}" alt="ansokningtitle">
                     </a>
-                    <a href="#" class="kk_aj_arr_item_minneslista ansokningstatus" title="Lägg till i minneslistan" rel="ansokningid">
-                      <img src="assets/images/Add-New-32.png" alt="Lägg till i minneslistan" title="Lägg till i minneslistan"></a>
+                    <!-- <a  href="#" class="kk_aj_arr_item_minneslista ansokningstatus" title="Lägg till i minneslistan" rel="ansokningid">
+                      <img src="Portals/_default/Skins/kk_aj_Publik_Bespin/public/images/Add-New-32.png" alt="Lägg till i minneslistan" title="Lägg till i minneslistan">
+                    </a> -->
                   </div>
                 </div>
 
@@ -295,7 +275,7 @@ id= {{debug}}
                   </div>
                   <div class="kk_aj_arr_item_buttonblock small-2 columns">
                     <a [routerLink]="['/Arrangemang/id/', item.ansokningid]"   rel="ansokningid">
-                      <img src="assets/images/iconrightarrow.png" class="readmorebutton" alt="Läs mer" title="Läs mer"/>
+                      <img src="Portals/_default/Skins/kk_aj_Publik_Bespin/public/images/iconrightarrow.png" class="readmorebutton" alt="Läs mer" title="Läs mer"/>
                     </a>
                   </div>
                 </div>
@@ -303,17 +283,16 @@ id= {{debug}}
                   <div class="kk_aj_arr_item_Utovare small-7 medium-8 columns" rel="ansokningUtovarid"><h3>{{item.ansokningutovare}}</h3></div>
                   <div class="kk_aj_arr_item_age small-5 medium-4 columns age"><h3>ÅLDER {{item.ansokningAgespan}}ÅR</h3></div>
                 </div>
-                <div  class="kk_aj_filtervalues S_BB_pansokningFilterfakta.Bokningsbar S_ML_ansokningFilterfakta.Morklaggning S_TH_ansokningFilterfakta.Takhojd S_ST">30 min</div><div class="S_KO">1000kr</div>
+
               </div>
 
           </div>
           <!-- Item STOPP -->
 
-          <div class="small-12 columns" *ngIf="!resultatantal || resultatantal<=0" >
-
-            <div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status">
-             <span class="sr-only">Laddar...</span>
-           </div>
+          <div class="small-12 columns" *ngIf="ShowSpinner" >
+          <div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status">
+            <img src="Portals/_default/Skins/kk_aj_Publik_Bespin/public/ajax-loader.gif" />
+          </div>
 
          </div>
 
@@ -334,8 +313,8 @@ id= {{debug}}
         </div>
         <!-- STOP paginering nummer block -->
         </div>
-        <div *ngIf="showNoPostToShow || (resultatantal && filterMetadata.count ==0 && !showNoPostToShow)" class="kk_aj_productlist"><h2>Tyvärr hittade vi inte det du sökte!</h2></div>
+        <div *ngIf="showNoPostToShow" class="kk_aj_productlist"><h2>Tyvärr hittade vi inte det du sökte!</h2></div>
+
     </div>
   </div>
 </div>
-{{showNoPostToShow}} - {{resultatantal}} - {{filterMetadata.count}}

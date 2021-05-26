@@ -1,0 +1,33 @@
+<div *ngIf="MediaExempelblock" class="arrexempelblock granska_exempel">
+  <h3 class="arrExempellistHeader">
+    SMAKPROV FRÅN FÖRESTÄLLNINGEN
+  </h3>
+  <hr class="linje" />
+
+  <ul class="arrExempellist">
+    <!-- item loop START -->
+
+    <li *ngFor="let item of MediaExempelblock">
+
+      <a href="" target="_blank" style="color: #666 !important">
+        <div class="row">
+          <div class="medium-4 columns" [innerHTML]="mediahandler(item)">
+          </div>
+          <div class="medium-8 columns">
+            <div class="row">
+              <div class="small-12 columns">
+                <h2>{{item.mediaTitle}}</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="medium-12 columns">
+                <p>{{item.mediaBeskrivning}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </li>
+    <!-- item loop STOP -->
+  </ul>
+</div>

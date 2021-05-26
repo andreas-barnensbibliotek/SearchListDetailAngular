@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   title = 'kk_aj_kulturkatalogenvästAngular';
   elipsIcon = faEllipsisV;
 debug:any=""
+menyopen:boolean;
 
   constructor(public glb:Global, private location: LocationStrategy, ){
     history.pushState(null, null, window.location.href);
@@ -22,13 +23,26 @@ debug:any=""
 
     });
 
-    // this.activatedRoute.queryParams.subscribe(data=>{
-    //   this.debug= data;
-    //  })
+    this.glb.mainJsonKatalogItemListHandler.subscribe(()=>{
+    });
   }
   ngOnInit() {
     // this.activatedRoute.queryParams.subscribe(values => {
     //   console.log(values);//Which will print the properties you have passed
     // });
   }
+
+  countChange(event) {
+    console.log("parent" + event)
+    // if(event =="false"){
+     this.menyopen=false;
+
+    // }
+  }
+
+  openMeny(){
+    this.menyopen=true;
+
+  }
+
 }

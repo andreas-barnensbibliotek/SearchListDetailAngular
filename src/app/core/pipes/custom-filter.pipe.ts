@@ -42,7 +42,7 @@ export class CustomFilterPipe implements PipeTransform {
 
  filterBokningsbar(tmplista:any,search:any){
   if(!_.isEmpty(search)){
-    return _.filter(tmplista, (itm)=>{ return itm.ansokningFilterfakta.Bokningsbar ==search})
+    return _.filter(tmplista, (itm)=>{ return  Number(itm.ansokningFilterfakta.Bokningsbar) <= Number(search)})
   }else{
     return tmplista;
   }
@@ -57,8 +57,10 @@ export class CustomFilterPipe implements PipeTransform {
  }
 
  filterTakhojd(tmplista:any,search:any){
+
   if(!_.isEmpty(search)){
-    return _.filter(tmplista, (itm)=>{ return itm.ansokningFilterfakta.Takhojd ==search})
+
+    return _.filter(tmplista, (itm)=>{ return Number(itm.ansokningFilterfakta.Takhojd) >=Number(search)})
   }else{
     return tmplista;
   }
@@ -66,7 +68,7 @@ export class CustomFilterPipe implements PipeTransform {
 
  filterSpeltid(tmplista:any,search:number){
   if(search>0){
-    return _.filter(tmplista, (itm)=>{ return itm.ansokningFilterfakta.Speltid <=search.toString()})
+    return _.filter(tmplista, (itm)=>{ return Number(itm.ansokningFilterfakta.Speltid) <=Number(search) && Number(itm.ansokningFilterfakta.Speltid) >0})
   }else{
     return tmplista;
   }
@@ -74,7 +76,7 @@ export class CustomFilterPipe implements PipeTransform {
 
  filterKostnad(tmplista:any,search:number){
   if(search>0){
-    return _.filter(tmplista, (itm)=>{ return itm.ansokningFilterfakta.Kostnad <=search})
+    return _.filter(tmplista, (itm)=>{ return Number(itm.ansokningFilterfakta.Kostnad) <=Number(search) && Number(itm.ansokningFilterfakta.Kostnad) >0})
   }else{
     return tmplista;
   }

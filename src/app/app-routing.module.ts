@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes,ExtraOptions } from '@angular/router';
 
 const routerOptions: ExtraOptions = {
-  enableTracing: true,
+  enableTracing: false,
   scrollPositionRestoration: 'enabled',
   anchorScrolling: 'enabled',
   scrollOffset: [0, 64],

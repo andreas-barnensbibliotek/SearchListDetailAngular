@@ -12601,6 +12601,8 @@ input[type=radio] + label {
         margin-top: 4rem; } }
   /* line 190, _dev/devsass/devScss/kulturkatalogen/_produktlistsearch.scss */
   .kk_aj_mainsearchblock .searchformbutton {
+    margin-left:4px;
+    margin-right:4px;
     -webkit-flex-shrink: 0;
         -ms-flex-negative: 0;
             flex-shrink: 0;
@@ -18403,3 +18405,6 @@ label img {
   position: static !important;
   /*z-index:902;*/ }
 
+.d-flex{
+  display: flex !important;
+}

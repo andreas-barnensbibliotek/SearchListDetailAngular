@@ -8,6 +8,7 @@ import { IpostSearch } from 'src/app/core/interface/ipost-search';
 import { clsPostData } from 'src/app/core/models/clsPostData';
 import { ActivatedRoute, Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-mainpage',
   templateUrl: './mainpage.component.html',
@@ -29,6 +30,9 @@ export class MainpageComponent implements OnInit {
   keyword = 'ansokningtitle';
   autocompletedata:any = [];
   showNoPostToShow:boolean= false;
+
+  ShowSpinner:boolean=true;
+
   filterMetadata:any= { count: -1 };
 
   filterterm:clsAdvFilter=new clsAdvFilter
@@ -53,6 +57,7 @@ export class MainpageComponent implements OnInit {
 
   ngOnInit(): void {
     // this.debug= this.activatedRoute.snapshot.queryParams
+    this.spinnerhandler(true);
     this.getpagedata();
     // this.wpApi.currentPageDataHandler.subscribe(()=>{
     //   // handles global events
@@ -68,6 +73,7 @@ export class MainpageComponent implements OnInit {
   }
 
   ngAfterViewChecked() {
+
     this.cd.detectChanges(); // använd för att inte får expressionchangedAfterItHasbeenCheckedError
 
     // kolla om filter finns använd det isf
@@ -77,6 +83,7 @@ export class MainpageComponent implements OnInit {
 
     // tillbaka från detaljvyn scroll
     if(this.glb.currentAnsokningid>0){
+
       this.scroll('#goto'+ this.glb.currentAnsokningid);
       this.glb.currentAnsokningid=0;
     }
@@ -84,13 +91,17 @@ export class MainpageComponent implements OnInit {
 
   getpagedata(){
     //console.log("laddar ny data: ", this.glb.mainJsonKatalogItemList);
+
     if(this.glb.isEmptyObj(this.glb.mainJsonKatalogItemList)){
+
+      this.resultatantal =0;
       this.loadPageData(this.postdata);
     }else{
       //console.log("data finns: ", this.glb.mainJsonKatalogItemList.kk_aj_admin);
 
       this.mainPageData = this.glb.mainJsonKatalogItemList.kk_aj_admin.ansokningarlista.ansokningar;
       this.resultatantal = this.mainPageData.length;
+      this.spinnerhandler(false);
       // console.log(this.glb.showPageMax + " glb.pageSize: "+ this.glb.pageSize);
       // this.mainCategoryname= this.glb.currentCategoryName;
     }
@@ -98,7 +109,7 @@ export class MainpageComponent implements OnInit {
 
   loadPageData(srhdata:IpostSearch){
     this.resetsearch();
-
+    this.spinnerhandler(true);
     this.wpApi.getKatalogList(srhdata).subscribe(Response => {
       this.glb.mainJsonKatalogItemList = Response
       // this.resultatantal = this.glb.mainJsonKatalogItemList.kk_aj_admin.ansokningarlista.ansokningarcount;
@@ -106,6 +117,7 @@ export class MainpageComponent implements OnInit {
       this.mainPageData = this.glb.mainJsonKatalogItemList.kk_aj_admin.ansokningarlista.ansokningar;
       this.resultatantal = this.mainPageData.length;
       console.log("ny data är laddad: ", this.glb.mainJsonKatalogItemList);
+      this.spinnerhandler(false);
       this.noresult();
     })
   }
@@ -116,7 +128,7 @@ export class MainpageComponent implements OnInit {
       this.glb.mainJsonKatalogItemList = Response
       this.resultatantal = this.glb.mainJsonKatalogItemList.kk_aj_admin.ansokningarlista.ansokningarcount
       this.mainPageData = this.glb.mainJsonKatalogItemList.kk_aj_admin.ansokningarlista.ansokningar
-
+      this.spinnerhandler(false);
     })
   }
 
@@ -131,7 +143,10 @@ export class MainpageComponent implements OnInit {
     }
   }
 
+
+  //START  main searchform och textsearch
   resetsearch(){
+    this.spinnerhandler(true);
     this.mainPageData=[];
     this.showNoPostToShow = false;
     this.pageChanged(1)
@@ -174,6 +189,8 @@ export class MainpageComponent implements OnInit {
     this.postdata.stopyear = String(ageformStopYear);
   }
 
+//END  main searchform och textsearch
+
   resetFormClick(){
     this.postdata = new clsPostData;
     this.currarrid = Number(this.postdata.arrtypid);
@@ -189,6 +206,8 @@ export class MainpageComponent implements OnInit {
     this.filterterm.tid=0;
     return false;
   }
+
+
   setfilter(){
     this.glb.filterform=  this.filterterm;
     console.log("filter är: " + this.filterterm.kostnad);
@@ -227,29 +246,28 @@ export class MainpageComponent implements OnInit {
   }
 
   scroll(skrivid) {
-    document.querySelector(skrivid).scrollIntoView({behavior: 'smooth'});
-  }
+    if(!document.querySelector(skrivid)){
+      skrivid="#kk_aj_mainFreetextSearchblock";
+    };
+      document.querySelector(skrivid).scrollIntoView({behavior: 'smooth'});
 
-  hideSpinner(antalposter:number){
-    antalposter= this.filterMetadata.count
-    let retobj:boolean= false;
-
-    if(antalposter==0){
-      retobj = true;
-    }
-    return retobj;
   }
 
   gotodetail(id:any){
+    this.spinnerhandler(false);
     this.glb.currentAnsokningid= id;
-    //this.router.navigateByUrl("/details/"+ id);
-    // this.pageChanged(6);
      this.glb.showDetailpage();
   }
 
   pageChanged(event){
     this.glb.currentpage = event;
-    this.p = event
-    console.log("pageChanged " + this.p)
+    this.p = event;
+  }
+
+  spinnerhandler(val:boolean){
+    console.log("hitta hit");
+    this.glb.showspinner= val;
+    this.ShowSpinner= this.glb.showspinner;
+
   }
 }

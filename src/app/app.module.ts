@@ -18,6 +18,13 @@ import { FormsModule } from '@angular/forms';
 import { CustomFilterPipe } from './core/pipes/custom-filter.pipe';
 import { PageCountPipe } from './core/pipes/page-count.pipe';
 import { KatalogenMainComponent } from './katalogen-main/katalogen-main.component';
+import { UnescapePipe } from './core/pipes/unescape.pipe';
+import { FooterComponent } from './shared/footer/footer.component';
+import { FaktaComponent } from './detailpage/fakta/fakta.component';
+import { KontaktComponent } from './detailpage/kontakt/kontakt.component';
+import { MediaexempelComponent } from './detailpage/mediaexempel/mediaexempel.component';
+import { HeaderComponent } from './shared/header/header.component';
+
 
 // import { AutocompleteLibModule } from 'angular-ng-autocomplete';
 
@@ -29,7 +36,13 @@ import { KatalogenMainComponent } from './katalogen-main/katalogen-main.componen
     CustomFilterPipe,
     PageCountPipe,
     ScrollToTopComponent,
-    KatalogenMainComponent
+    KatalogenMainComponent,
+    UnescapePipe,
+    FooterComponent,
+    FaktaComponent,
+    KontaktComponent,
+    MediaexempelComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

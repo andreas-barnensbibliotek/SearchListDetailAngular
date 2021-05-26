@@ -1,0 +1,48 @@
+<div class="artsidecontainer granska_Fakta_mainblock">
+  <h3>Fakta</h3>
+  <div class="row" *ngFor="let item of fakta" >
+    <div class="small-12 medium-6 columns faktalabel">
+      {{item.Faktarubrik}}
+    </div>
+    <div class="small-12 medium-6 columns">{{item.FaktaValue}}</div>
+  </div>
+</div>
+
+<div class="artsidecontainer granska_Publik_mainblock">
+  <h3>Publik</h3>
+  <div class="row" *ngFor="let item of publik" >
+    <div class="small-12 medium-6 columns faktalabel">
+      {{item.Faktarubrik}}
+    </div>
+    <div class="small-12 medium-6 columns">{{item.FaktaValue}}</div>
+  </div>
+</div>
+
+<div class="artsidecontainer granska_lokal_mainblock">
+  <h3>Lokal</h3>
+  <div class="row" *ngFor="let item of lokal" >
+    <div class="small-12 medium-6 columns faktalabel">
+      {{item.Faktarubrik}}
+    </div>
+    <div class="small-12 medium-6 columns">{{item.FaktaValue}}</div>
+  </div>
+</div>
+
+<div class="artsidecontainer granska_Ekonomi_mainblock">
+  <h3>Kostnad/Pris</h3>
+  <div class="row" *ngFor="let item of ekonomi" >
+    <div class="small-12 medium-6 columns faktalabel">
+      {{item.Faktarubrik}}
+    </div>
+    <div class="small-12 columns" [ngClass]="{'medium-6': item.FaktaTypID!=30 }" >{{item.FaktaValue}}</div>
+  </div>
+</div>
+<div *ngIf="!ovrigt=== undefined || ovrigt.length > 0" class="artsidecontainer granska_Ovrigt_mainblock">
+	<h3>Övrigt</h3>
+  <div class="row" *ngFor="let item of ovrigt">
+    <div class="small-12 medium-6 columns faktalabel">{{item.Faktarubrik}}</div>
+    <div class="small-12 columns">
+      {{item.FaktaValue}}
+    </div>
+  </div>
+</div>

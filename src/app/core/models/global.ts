@@ -24,10 +24,10 @@ export class Global {
     currentAnsokningid:any=0;
     currentCategoryName:any;
     currentpage:number;
-  filterform:any;
+    filterform:any;
     server:string = this._usedServer + this._cmdApi;
     devkey:string = "/alf/?type=json";
-
+    showspinner:boolean= true;
     testtotal:any;
 
     private _mainJsonKatalogItemListHandler: Subject<void> = new Subject<void>();
