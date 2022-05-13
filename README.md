@@ -1,3 +1,6 @@
+Detta är kulturkatalogens startsida med sökfunktion och detaljvy
+denna dist flyttas sedan in i dnn: D:\wwwroot\kulturkatalogen_dnndev.me\Portals\_default\Skins\kk_aj_Publik_Dagobah skin
+
 # kulturkatalogenSearch angular project
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.8.

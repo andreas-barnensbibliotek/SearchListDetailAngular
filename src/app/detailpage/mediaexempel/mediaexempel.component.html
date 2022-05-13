@@ -9,7 +9,7 @@
 
     <li *ngFor="let item of MediaExempelblock">
 
-      <a href="" target="_blank" style="color: #666 !important">
+      <a *ngIf="item.mediaLink" href="{{item.mediaLink}}" target="_blank" style="color: #666 !important">
         <div class="row">
           <div class="medium-4 columns" [innerHTML]="mediahandler(item)">
           </div>
@@ -27,6 +27,24 @@
           </div>
         </div>
       </a>
+
+        <div *ngIf="!item.mediaLink" class="row">
+          <div class="medium-4 columns" [innerHTML]="mediahandler(item)">
+          </div>
+          <div class="medium-8 columns">
+            <div class="row">
+              <div class="small-12 columns">
+                <h2>{{item.mediaTitle}}</h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="medium-12 columns">
+                <p>{{item.mediaBeskrivning}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
     </li>
     <!-- item loop STOP -->
   </ul>

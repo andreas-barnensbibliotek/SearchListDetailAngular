@@ -30,7 +30,7 @@ export class KatalogenApiService extends ApiServiceService  {
   }
 
   getByArrId(arrid:any){ //Get all categories: id= 0
-    let url:string = this._glb.server +"/arrangemang/details/uid/0/typ/"+ arrid +"/devkey"+ this._glb.devkey;
+    let url:string = this._glb.server +"/arrangemang/all_details/uid/0/typ/"+ arrid +"/devkey"+ this._glb.devkey;
     return this.getPosts(url);
   }
 }

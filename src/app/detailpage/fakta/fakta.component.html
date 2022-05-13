@@ -4,7 +4,8 @@
     <div class="small-12 medium-6 columns faktalabel">
       {{item.Faktarubrik}}
     </div>
-    <div class="small-12 medium-6 columns">{{item.FaktaValue}}</div>
+    <div class="small-12 medium-6 columns" *ngIf="item.FaktaTypID == 25"><a href="{{item.FaktaValue}}" target="_blank">L&auml;rarhandledning</a></div>
+    <div class="small-12 medium-6 columns" *ngIf="item.FaktaTypID != 25" >{{item.FaktaValue}}</div>
   </div>
 </div>
 
@@ -18,7 +19,7 @@
   </div>
 </div>
 
-<div class="artsidecontainer granska_lokal_mainblock">
+<div *ngIf="!lokal=== undefined || lokal.length > 0" class="artsidecontainer granska_lokal_mainblock">
   <h3>Lokal</h3>
   <div class="row" *ngFor="let item of lokal" >
     <div class="small-12 medium-6 columns faktalabel">

@@ -7,11 +7,12 @@ import { Subject } from 'rxjs';
 @Injectable() // Decorator that marks a class as available to be provided and injected as a dependency.
 export class Global {
 
-    private _liveserver:string = "https://www.kulturkatalogenvast.org";
-    private _devserver:string = "https://api.kulturkatalogenvast.org";
+    private _liveAPI:string = "https://api.kulturkatalogenvast.org";
+    private _devAPI:string = "https://devapi.kulturkatalogenvast.org";
+    private _SandboxAPI:string = "https://sandboxapi.kulturkatalogenvast.org";
     private _localdevserver:string = "http://localhost:60485";
-    private _usedServer:string = this._devserver;
 
+    private _usedServer:string = this._liveAPI; // <-- denna används
     private _cmdApi:string = "/Api_v2";
 
     mainJsonKatalogItemList:any =[];

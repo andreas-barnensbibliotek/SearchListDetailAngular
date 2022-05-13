@@ -1,6 +1,6 @@
 <div *ngIf="Kontaktblock" class="artsidecontainer granska_Kontakt_mainblock">
   <h3>Kontakt</h3>
-  <div class="row granska_Utovare_Organisation_block">
+  <!-- <div class="row granska_Utovare_Organisation_block">
     <div class="small-12 medium-6 columns faktalabel">
       Aktör/Utövare/Grupp
     </div>
@@ -9,16 +9,16 @@
         {{Kontaktblock.Organisation}}
       </span>
     </div>
-  </div>
+  </div> -->
   <div class="row granska_Utovare_namn_block">
     <div class="small-12 medium-6 columns faktalabel">
       Kontaktperson
     </div>
     <div class="small-12 medium-6 columns">
-      <span class="granska_Utovare_namn">{{Kontaktblock.Fornamn}} {{Kontaktblock.Efternamn}}</span>
+      <span class="granska_Utovare_namn">{{Kontaktblock.ansokningKontaktfornamn}} {{Kontaktblock.ansokningKontaktEfternamn}}</span>
     </div>
   </div>
-  <div class="row granska_Utovare_Adress_block">
+  <!-- <div class="row granska_Utovare_Adress_block">
     <div class="small-12 medium-6 columns faktalabel">Adress</div>
     <div class="small-12 medium-6 columns">
       <span class="granska_Utovare_Adress">{{Kontaktblock.Adress}}</span>
@@ -31,13 +31,13 @@
     <div class="small-12 medium-6 columns">
       <span class="granska_Utovare_postort">{{Kontaktblock.Postnr}} {{Kontaktblock.Ort}}</span>
     </div>
-  </div>
+  </div> -->
   <div class="row granska_Utovare_tfn_block">
     <div class="small-12 medium-6 columns faktalabel">
       Telefon
     </div>
     <div class="small-12 medium-6 columns">
-      <span class="granska_Utovare_tfn">{{Kontaktblock.Telefon}}</span>
+      <span class="granska_Utovare_tfn">{{Kontaktblock.ansokningKontaktTelefon}}</span>
     </div>
   </div>
   <div class="row granska_Utovare_epost_block">
@@ -45,8 +45,8 @@
       E-post
     </div>
     <div class="small-12 medium-12 columns">
-      <span class="granska_Utovare_epost right">
-        <a href="mailto:{{Kontaktblock.Epost}}">{{Kontaktblock.Epost}}</a></span>
+      <span class="granska_Utovare_epost ">
+        <a href="mailto:{{Kontaktblock.ansokningKontaktEpost}}">{{Kontaktblock.ansokningKontaktEpost}}</a></span>
     </div>
   </div>
   <div class="row granska_Utovare_hemsida_block">
@@ -55,7 +55,7 @@
     </div>
     <div class="small-12 medium-12 columns">
       <span class="granska_Utovare_hemsida right">
-        <a href="https://{{Kontaktblock.Weburl}}" target="_blank">{{Kontaktblock.Weburl}}</a>
+        <a href="{{Kontaktblock.ansokningUtovardata.Weburl}}" target="_blank">{{Kontaktblock.ansokningUtovardata.Weburl}}</a>
       </span>
     </div>
   </div>
